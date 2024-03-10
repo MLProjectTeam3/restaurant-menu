@@ -1,2 +1,2 @@
-<h1>Welcome to OUr team</h1>
+<h1>Welcome To Our Team</h1>
 <p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
