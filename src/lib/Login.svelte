@@ -30,7 +30,7 @@
     <br>
     <div>
         <label for="username">Username</label>
-        <input type="text" id="username" placeholder="Enter your username" bind:value={username} class="max-w-xs"/>
+        <input type="text" id="username" placeholder="Enter your username" bind:value={username} class="max-w-xs border-black border-2"/>
     </div>
     <br>
     <div>
