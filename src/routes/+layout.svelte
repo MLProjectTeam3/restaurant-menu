@@ -1,14 +1,6 @@
 <script>
-    import "../lib/app.css";
+  import Navbar from "$lib/components/navbar.svelte";
+  import "../lib/app.css";
   </script>
-<div class="main-content">
-  <slot></slot>
-</div>
-
-<style>
-  .main-content{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-</style>
+  <Navbar />
+  <slot />
