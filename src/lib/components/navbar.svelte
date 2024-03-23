@@ -9,9 +9,9 @@
         <a href="#" class="text-4A2C2C font-jockey font-bold ml-4" style="font-family: 'JetBrains Mono',sans-serif; font-size: 1.3rem;">Reviews</a>
     </div>
 
-    <a href="menu-page.html" class="absolute top-2 right-2 h-8 px-4" style="background-color: transparent; border: 2px solid #FE4C01; color: #FE4C01; font-family: 'JetBrains Mono', monospace; font-weight: bold; font-size:22px; text-decoration: none;">MENU</a>
+    <a href="#" class="absolute top-2 right-2 h-8 px-4" style="background-color: transparent; border: 2px solid #FE4C01; color: #FE4C01; font-family: 'JetBrains Mono', monospace; font-weight: bold; font-size:22px; text-decoration: none;">MENU</a>
 
-    <a href="cart-page.html" class="absolute top-2 right-28">
+    <a href="#" class="absolute top-2 right-28">
         <img src="shopping-cart.svg" alt="Shopping Cart" class="h-8 w-8">
     </a>
 </div>
