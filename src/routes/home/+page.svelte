@@ -1,0 +1,1 @@
+<h1 class="text-red-600 flex w-full justify-center text-3xl pt-16">The landing page(Homepage) to be coded here.</h1> <!--Delete this line and start-->
