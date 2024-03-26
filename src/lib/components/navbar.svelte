@@ -4,7 +4,7 @@
 
 </script>
 
-<div class="h-16 px-4 w-full bg-background border-b-2 border-primary border-opacity-15 flex justify-center items-center justify-between fixed top-0">
+<div class="h-[10vh] px-4 w-full bg-background border-b-2 border-primary border-opacity-15 flex justify-center items-center justify-between fixed top-0">
 
     <div class="flex justify-center items-center space-x-2">
         <img src="icons/coffee.svg" alt="Coffee" class="h-8 stroke-primary">

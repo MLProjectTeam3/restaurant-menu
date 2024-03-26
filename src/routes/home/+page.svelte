@@ -1,26 +1,33 @@
 <script lang="ts">
+  import { Swiper, SwiperSlide } from "swiper/svelte";
+  import "swiper/css";
   import * as Card from "$lib/components/ui/card"
-    import * as Carousel from "$lib/components/ui/carousel/index.js";
+  import { Button } from "$lib/components/ui/button"
+  
 </script>
 
-<div class="w-full h-[89vh]">
-    <Carousel.Root class="w-full max-w-sm">
-      <Carousel.Content class="-ml-1">
-        {#each Array(5) as _, i (i)}
-          <Carousel.Item class="pl-1 md:basis-1/2 lg:basis-1/3">
-            <div class="p-1">
-              <Card.Root>
-                <Card.Content
-                  class="flex aspect-square items-center justify-center p-6"
-                >
-                  <span class="text-2xl font-semibold">{i + 1}</span>
-                </Card.Content>
-              </Card.Root>
-            </div>
-          </Carousel.Item>
-        {/each}
-      </Carousel.Content>
-      <Carousel.Previous />
-      <Carousel.Next />
-    </Carousel.Root>
+<div class="w-full max-h-[90vh] flex justify-center items-center">
+
+<div class="w-full max-h-[90vh] bg-black">
+    <Swiper
+    slidesPerView={1}
+    autoplay={true}
+    on:slideChange={() => console.log('slide change')}
+  >
+    <SwiperSlide><img class="w-full h-[90vh] object-cover opacity-50" src="images/landingBg5.jpg" alt="landingBg1"></SwiperSlide>
+    <SwiperSlide><img class="w-full h-[90vh] object-cover opacity-50" src="images/landingBg6.jpg" alt="landingBg1"></SwiperSlide>
+    <SwiperSlide><img class="w-full h-[90vh] object-cover opacity-50" src="images/landingBg7.jpg" alt="landingBg1"></SwiperSlide>
+    <SwiperSlide><img class="w-full h-[90vh] object-cover opacity-50" src="images/landingBg3.jpg" alt="landingBg1"></SwiperSlide>
+  </Swiper>
+</div>
+
+<Card.Root class="absolute z-10 text-center w-[90vw] py-12 rounded-3xl sm:w-[480px]">
+    <Card.Header>
+      <Card.Title class="text-5xl text-primary font-normal drop-shadow-md">CAFE SANMATHI</Card.Title>
+      <Card.Description class="text-xl text-primary opacity-75">Every Coffe Has A Story</Card.Description>
+    </Card.Header>
+    <Card.Footer class="justify-center">
+      <Button class="font-normal text-4xl px-12 py-8">MENU</Button>
+    </Card.Footer>
+  </Card.Root>
 </div>
