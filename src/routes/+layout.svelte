@@ -8,6 +8,6 @@
 });
 </script>
   <Navbar />
-  <div class="mt-16">
+  <div class="mt-[10vh]">
   <slot />
   </div>
