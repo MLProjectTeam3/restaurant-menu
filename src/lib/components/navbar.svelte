@@ -1,6 +1,6 @@
 <script>
 
-  import { Button } from "./ui/button";
+    import { Button } from "./ui/button";
 
 </script>
 
@@ -13,7 +13,7 @@
 
     <div class="flex text-xl font text-primary justify-between items-center space-x-16" > <!-- Adjust width as needed -->
         <a href="/home" >Home</a>
-        <a href="#">AboutUs</a>
+        <a href="/menu">AboutUs</a>
         <a href="#">Contact</a>
         <a href="#">Reviews</a>
     </div>
