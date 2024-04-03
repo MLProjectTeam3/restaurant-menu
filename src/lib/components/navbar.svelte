@@ -46,19 +46,19 @@
           ><a href="/home">Home</a></DropdownMenu.Item
         ><DropdownMenu.Separator />
         <DropdownMenu.Item class="text-xl"
-          ><a href="about">AboutUs</a></DropdownMenu.Item
+          ><a href="/home#about">AboutUs</a></DropdownMenu.Item
         ><DropdownMenu.Separator />
         <DropdownMenu.Item class="text-xl"
-          ><a href="contact">Contact</a></DropdownMenu.Item
+          ><a href="/home#contact">Contact</a></DropdownMenu.Item
         ><DropdownMenu.Separator />
-        <DropdownMenu.Item class="text-xl"
-          ><a href="reviews">Reviews</a></DropdownMenu.Item
-        ><DropdownMenu.Separator />
+        <!-- <DropdownMenu.Item class="text-xl"
+          ><a href="/home#reviews">Reviews</a></DropdownMenu.Item
+        ><DropdownMenu.Separator /> -->
       </DropdownMenu.Group>
       <DropdownMenu.Group class="p-2 border-t border-primary border-opacity-25">
         <div class="flex justify-between items-center">
           <Button variant="outline">LOGIN</Button>
-          <a href=""><img src="icons/shoppingCart.svg" alt="menu" /></a>
+          <a href="/cart"><img src="icons/shoppingCart.svg" alt="menu" /></a>
         </div>
       </DropdownMenu.Group>
     </DropdownMenu.Content>
