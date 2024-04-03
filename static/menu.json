@@ -1,0 +1,1724 @@
+[
+	{
+		"id": 1,
+		"category": "Veg Starters",
+		"itemName": "Potato Chilly",
+		"type": "Veg",
+		"price": 70
+	},
+	{
+		"id": 2,
+		"category": "Veg Starters",
+		"itemName": "Potato Manchurian",
+		"type": "Veg",
+		"price": 70
+	},
+	{
+		"id": 3,
+		"category": "Veg Starters",
+		"itemName": "Soya Chilly",
+		"type": "Veg",
+		"price": 70
+	},
+	{
+		"id": 4,
+		"category": "Veg Starters",
+		"itemName": "Soya Manchurian",
+		"type": "Veg",
+		"price": 70
+	},
+	{
+		"id": 5,
+		"category": "Veg Starters",
+		"itemName": "Gobi Manchurian",
+		"type": "Veg",
+		"price": 70
+	},
+	{
+		"id": 6,
+		"category": "Veg Starters",
+		"itemName": "Gobi Chilly",
+		"type": "Veg",
+		"price": 70
+	},
+	{
+		"id": 7,
+		"category": "Veg Starters",
+		"itemName": "Mushroom Chilly",
+		"type": "Veg",
+		"price": 90
+	},
+	{
+		"id": 8,
+		"category": "Veg Starters",
+		"itemName": "Mushroom Manchurian",
+		"type": "Veg",
+		"price": 90
+	},
+	{
+		"id": 9,
+		"category": "Veg Starters",
+		"itemName": "Baby Com Chilly",
+		"type": "Veg",
+		"price": 90
+	},
+	{
+		"id": 10,
+		"category": "Veg Starters",
+		"itemName": "Baby Com Manchurian",
+		"type": "Veg",
+		"price": 90
+	},
+	{
+		"id": 11,
+		"category": "Veg Starters",
+		"itemName": "Paneer Manchurian",
+		"type": "Veg",
+		"price": 110
+	},
+	{
+		"id": 12,
+		"category": "Veg Starters",
+		"itemName": "Paneer Chilly",
+		"type": "Veg",
+		"price": 110
+	},
+	{
+		"id": 13,
+		"category": "Veg Starters",
+		"itemName": "Paneer Pepper",
+		"type": "Veg",
+		"price": 120
+	},
+	{
+		"id": 14,
+		"category": "Non Veg Starters",
+		"itemName": "Chicken Lolly Pop",
+		"type": "Non-Veg",
+		"price": 120
+	},
+	{
+		"id": 15,
+		"category": "Non Veg Starters",
+		"itemName": "Chicken Chilly",
+		"type": "Non-Veg",
+		"price": 120
+	},
+	{
+		"id": 16,
+		"category": "Non Veg Starters",
+		"itemName": "Chicken Manchurian",
+		"type": "Non-Veg",
+		"price": 120
+	},
+	{
+		"id": 17,
+		"category": "Non Veg Starters",
+		"itemName": "Chicken Garlic",
+		"type": "Non-Veg",
+		"price": 130
+	},
+	{
+		"id": 18,
+		"category": "Non Veg Starters",
+		"itemName": "Chicken Pepper",
+		"type": "Non-Veg",
+		"price": 140
+	},
+	{
+		"id": 19,
+		"category": "Non Veg Starters",
+		"itemName": "Chicken Crispy",
+		"type": "Non-Veg",
+		"price": 160
+	},
+	{
+		"id": 20,
+		"category": "Non Veg Starters",
+		"itemName": "Chicken LeG Roast",
+		"type": "Non-Veg",
+		"price": 60
+	},
+	{
+		"id": 21,
+		"category": "Non Veg Starters",
+		"itemName": "BBQ Chicken Chilly",
+		"type": "Non-Veg",
+		"price": 140
+	},
+	{
+		"id": 22,
+		"category": "Non Veg Starters",
+		"itemName": "Chicken 65",
+		"type": "Non-Veg",
+		"price": 140
+	},
+	{
+		"id": 23,
+		"category": "Non Veg Starters",
+		"itemName": "Kabab",
+		"type": "Non-Veg",
+		"price": 35
+	},
+	{
+		"id": 24,
+		"category": "Non Veg Starters",
+		"itemName": "Egg Chilly",
+		"type": "Non-Veg",
+		"price": 80
+	},
+	{
+		"id": 25,
+		"category": "Non Veg Starters",
+		"itemName": "Egg Manchurian",
+		"type": "Non-Veg",
+		"price": 80
+	},
+	{
+		"id": 26,
+		"category": "Non Veg Starters",
+		"itemName": "Egg Pepper",
+		"type": "Non-Veg",
+		"price": 100
+	},
+	{
+		"id": 27,
+		"category": "Roti",
+		"itemName": "Chapathi",
+		"type": "Veg",
+		"price": 10
+	},
+	{
+		"id": 28,
+		"category": "Roti",
+		"itemName": "Kerala Paratha",
+		"type": "Veg",
+		"price": 10
+	},
+	{
+		"id": 29,
+		"category": "Roti",
+		"itemName": "Tawa Roti",
+		"type": "Veg",
+		"price": 12
+	},
+	{
+		"id": 30,
+		"category": "Roti",
+		"itemName": "Butter Tawa Roti",
+		"type": "Veg",
+		"price": 15
+	},
+	{
+		"id": 31,
+		"category": "Veg Curry",
+		"itemName": "Dal Fry",
+		"type": "Veg",
+		"price": 50
+	},
+	{
+		"id": 32,
+		"category": "Veg Curry",
+		"itemName": "Dal Thadka",
+		"type": "Veg",
+		"price": 60
+	},
+	{
+		"id": 33,
+		"category": "Veg Curry",
+		"itemName": "Dal Kholapuri",
+		"type": "Veg",
+		"price": 60
+	},
+	{
+		"id": 34,
+		"category": "Veg Curry",
+		"itemName": "Veg Kurma",
+		"type": "Veg",
+		"price": 80
+	},
+	{
+		"id": 35,
+		"category": "Veg Curry",
+		"itemName": "Veg Kholapuri",
+		"type": "Veg",
+		"price": 80
+	},
+	{
+		"id": 36,
+		"category": "Veg Curry",
+		"itemName": "Veg Hydarabadi",
+		"type": "Veg",
+		"price": 80
+	},
+	{
+		"id": 37,
+		"category": "Veg Curry",
+		"itemName": "Veg Kadai",
+		"type": "Veg",
+		"price": 80
+	},
+	{
+		"id": 38,
+		"category": "Veg Curry",
+		"itemName": "Mushroom Masala",
+		"type": "Veg",
+		"price": 80
+	},
+	{
+		"id": 39,
+		"category": "Veg Curry",
+		"itemName": "Mushroom Kadai",
+		"type": "Veg",
+		"price": 80
+	},
+	{
+		"id": 40,
+		"category": "Veg Curry",
+		"itemName": "Mushroom Paneer Kadai",
+		"type": "Veg",
+		"price": 90
+	},
+	{
+		"id": 41,
+		"category": "Veg Curry",
+		"itemName": "Paneer Butter Masala",
+		"type": "Veg",
+		"price": 110
+	},
+	{
+		"id": 42,
+		"category": "Veg Curry",
+		"itemName": "Paneer Kadai",
+		"type": "Veg",
+		"price": 110
+	},
+	{
+		"id": 43,
+		"category": "Veg Curry",
+		"itemName": "Palak Paneer",
+		"type": "Veg",
+		"price": 110
+	},
+	{
+		"id": 44,
+		"category": "Veg Curry",
+		"itemName": "Aloo Mutter Masala",
+		"type": "Veg",
+		"price": 70
+	},
+	{
+		"id": 45,
+		"category": "Veg Curry",
+		"itemName": "Aloo Gobi Masala",
+		"type": "Veg",
+		"price": 70
+	},
+	{
+		"id": 46,
+		"category": "Veg Curry",
+		"itemName": "Veg Tawa Masala",
+		"type": "Veg",
+		"price": 90
+	},
+	{
+		"id": 47,
+		"category": "Veg Curry",
+		"itemName": "Paneer Ghee Roast",
+		"type": "Veg",
+		"price": 120
+	},
+	{
+		"id": 48,
+		"category": "Veg Curry",
+		"itemName": "Veg Makhanwala",
+		"type": "Veg",
+		"price": 100
+	},
+	{
+		"id": 49,
+		"category": "Veg Curry",
+		"itemName": "Paneer Lazeez",
+		"type": "Veg",
+		"price": 130
+	},
+	{
+		"id": 50,
+		"category": "Non Veg Curry",
+		"itemName": "Chicken Masala",
+		"type": "Non-Veg",
+		"price": 100
+	},
+	{
+		"id": 51,
+		"category": "Non Veg Curry",
+		"itemName": "Chicken Ghee Roast",
+		"type": "Non-Veg",
+		"price": 130
+	},
+	{
+		"id": 52,
+		"category": "Non Veg Curry",
+		"itemName": "Chicken Hydrabadi",
+		"type": "Non-Veg",
+		"price": 110
+	},
+	{
+		"id": 53,
+		"category": "Non Veg Curry",
+		"itemName": "Chicken Urwal",
+		"type": "Non-Veg",
+		"price": 140
+	},
+	{
+		"id": 54,
+		"category": "Non Veg Curry",
+		"itemName": "Chicken Kolapuri",
+		"type": "Non-Veg",
+		"price": 110
+	},
+	{
+		"id": 55,
+		"category": "Non Veg Curry",
+		"itemName": "Chicken Do Pyaza",
+		"type": "Non-Veg",
+		"price": 120
+	},
+	{
+		"id": 56,
+		"category": "Non Veg Curry",
+		"itemName": "Chicken Handi",
+		"type": "Non-Veg",
+		"price": 110
+	},
+	{
+		"id": 57,
+		"category": "Non Veg Curry",
+		"itemName": "Chicken Sulthan",
+		"type": "Non-Veg",
+		"price": 140
+	},
+	{
+		"id": 58,
+		"category": "Non Veg Curry",
+		"itemName": "Butter Chicken",
+		"type": "Non-Veg",
+		"price": 110
+	},
+	{
+		"id": 59,
+		"category": "Non Veg Curry",
+		"itemName": "Kadai Chicken",
+		"type": "Non-Veg",
+		"price": 110
+	},
+	{
+		"id": 60,
+		"category": "Non Veg Curry",
+		"itemName": "Egg Masala",
+		"type": "Non-Veg",
+		"price": 80
+	},
+	{
+		"id": 61,
+		"category": "Non Veg Curry",
+		"itemName": "Egg Ghee Roast",
+		"type": "Non-Veg",
+		"price": 120
+	},
+	{
+		"id": 62,
+		"category": "Fried Rice",
+		"itemName": "Veg Fried Rice",
+		"type": "Veg",
+		"price": 60
+	},
+	{
+		"id": 63,
+		"category": "Fried Rice",
+		"itemName": "Veg Szechwan Fried Rice",
+		"type": "Veg",
+		"price": 70
+	},
+	{
+		"id": 64,
+		"category": "Fried Rice",
+		"itemName": "Mushroom Fried Rice",
+		"type": "Veg",
+		"price": 80
+	},
+	{
+		"id": 65,
+		"category": "Fried Rice",
+		"itemName": "Mushroom Szechwan Fried Rice",
+		"type": "Veg",
+		"price": 85
+	},
+	{
+		"id": 66,
+		"category": "Fried Rice",
+		"itemName": "Baby Corn Fried Rice",
+		"type": "Veg",
+		"price": 80
+	},
+	{
+		"id": 67,
+		"category": "Fried Rice",
+		"itemName": "Baby Corn Szechwan Fried Rice",
+		"type": "Veg",
+		"price": 90
+	},
+	{
+		"id": 68,
+		"category": "Fried Rice",
+		"itemName": "Egg Fried Rice",
+		"type": "Non-Veg",
+		"price": 70
+	},
+	{
+		"id": 69,
+		"category": "Fried Rice",
+		"itemName": "Egg Szechwan Fried Rice",
+		"type": "Non-Veg",
+		"price": 80
+	},
+	{
+		"id": 70,
+		"category": "Fried Rice",
+		"itemName": "Chicken Fried Rice",
+		"type": "Non-Veg",
+		"price": 80
+	},
+	{
+		"id": 71,
+		"category": "Fried Rice",
+		"itemName": "Chicken Szechwan Fried Rice",
+		"type": "Non-Veg",
+		"price": 90
+	},
+	{
+		"id": 72,
+		"category": "Rice",
+		"itemName": "Veg Biriyani",
+		"type": "Veg",
+		"price": 75
+	},
+	{
+		"id": 73,
+		"category": "Rice",
+		"itemName": "Egg Biriyani",
+		"type": "Non-Veg",
+		"price": 80
+	},
+	{
+		"id": 74,
+		"category": "Rice",
+		"itemName": "Chicken Biriyani (Full)",
+		"type": "Non-Veg",
+		"price": 100
+	},
+	{
+		"id": 75,
+		"category": "Rice",
+		"itemName": "Chicken Biriyani (Half)",
+		"type": "Non-Veg",
+		"price": 60
+	},
+	{
+		"id": 76,
+		"category": "Rice",
+		"itemName": "Chicken Kadai Biriyani",
+		"type": "Non-Veg",
+		"price": 130
+	},
+	{
+		"id": 77,
+		"category": "Rice",
+		"itemName": "Chicken Keema Rice",
+		"type": "Non-Veg",
+		"price": 140
+	},
+	{
+		"id": 78,
+		"category": "Rice",
+		"itemName": "Chicken Urwal Biriyani",
+		"type": "Non-Veg",
+		"price": 120
+	},
+	{
+		"id": 79,
+		"category": "Rice",
+		"itemName": "Chicken Dum Biriyani",
+		"type": "Non-Veg",
+		"price": 120
+	},
+	{
+		"id": 80,
+		"category": "Rice",
+		"itemName": "Chicken Hydrabadi Biriyani",
+		"type": "Non-Veg",
+		"price": 120
+	},
+	{
+		"id": 81,
+		"category": "Rice",
+		"itemName": "Paneer Urwal Biriyani",
+		"type": "Veg",
+		"price": 120
+	},
+	{
+		"id": 82,
+		"category": "Rice",
+		"itemName": "Ghee Rice",
+		"type": "Veg",
+		"price": 70
+	},
+	{
+		"id": 83,
+		"category": "Rice",
+		"itemName": "Jeera Rice",
+		"type": "Veg",
+		"price": 60
+	},
+	{
+		"id": 84,
+		"category": "Rice",
+		"itemName": "Veg Palav",
+		"type": "Veg",
+		"price": 75
+	},
+	{
+		"id": 85,
+		"category": "Rice",
+		"itemName": "Masala Rice",
+		"type": "Veg",
+		"price": 75
+	},
+	{
+		"id": 86,
+		"category": "Rice",
+		"itemName": "Curd Rice",
+		"type": "Veg",
+		"price": 60
+	},
+	{
+		"id": 87,
+		"category": "Stuff Paratha",
+		"itemName": "Aloo Paratha",
+		"type": "Veg",
+		"price": 30
+	},
+	{
+		"id": 88,
+		"category": "Stuff Paratha",
+		"itemName": "Methi Paratha",
+		"type": "Veg",
+		"price": 35
+	},
+	{
+		"id": 89,
+		"category": "Stuff Paratha",
+		"itemName": "Gobi Paratha",
+		"type": "Veg",
+		"price": 35
+	},
+	{
+		"id": 90,
+		"category": "Stuff Paratha",
+		"itemName": "Onion Paratha",
+		"type": "Veg",
+		"price": 35
+	},
+	{
+		"id": 91,
+		"category": "Stuff Paratha",
+		"itemName": "Mushroom Paratha",
+		"type": "Veg",
+		"price": 35
+	},
+	{
+		"id": 92,
+		"category": "Stuff Paratha",
+		"itemName": "Mix Veg Paratha",
+		"type": "Veg",
+		"price": 35
+	},
+	{
+		"id": 93,
+		"category": "Stuff Paratha",
+		"itemName": "Paneer Paratha",
+		"type": "Veg",
+		"price": 40
+	},
+	{
+		"id": 94,
+		"category": "Noodles",
+		"itemName": "Veg Noodles",
+		"type": "Veg",
+		"price": 60
+	},
+	{
+		"id": 95,
+		"category": "Noodles",
+		"itemName": "Veg Szechwan Noodles",
+		"type": "Veg",
+		"price": 70
+	},
+	{
+		"id": 96,
+		"category": "Noodles",
+		"itemName": "Mushroom Noodles",
+		"type": "Veg",
+		"price": 80
+	},
+	{
+		"id": 97,
+		"category": "Noodles",
+		"itemName": "Mushroom Szechwan Noodles",
+		"type": "Veg",
+		"price": 90
+	},
+	{
+		"id": 98,
+		"category": "Noodles",
+		"itemName": "Baby Corn Noodles",
+		"type": "Veg",
+		"price": 80
+	},
+	{
+		"id": 99,
+		"category": "Noodles",
+		"itemName": "Baby Corn Szechwan",
+		"type": "Veg",
+		"price": 90
+	},
+	{
+		"id": 100,
+		"category": "Noodles",
+		"itemName": "Egg Noodles",
+		"type": "Non-Veg",
+		"price": 70
+	},
+	{
+		"id": 101,
+		"category": "Noodles",
+		"itemName": "Egg Szechwan Noodles",
+		"type": "Non-Veg",
+		"price": 80
+	},
+	{
+		"id": 102,
+		"category": "Noodles",
+		"itemName": "Chicken Noodles",
+		"type": "Non-Veg",
+		"price": 80
+	},
+	{
+		"id": 103,
+		"category": "Noodles",
+		"itemName": "Chicken Szechwan Noodles",
+		"type": "Non-Veg",
+		"price": 90
+	},
+	{
+		"id": 104,
+		"category": "SPL Chinese Rice  & Noodles (Veg)",
+		"itemName": "Corn Fried Rice/Noodles",
+		"type": "Veg",
+		"price": 90
+	},
+	{
+		"id": 105,
+		"category": "SPL Chinese Rice  & Noodles (Veg)",
+		"itemName": "Butter Garlic Fried Rice/Noodles",
+		"type": "Veg",
+		"price": 90
+	},
+	{
+		"id": 106,
+		"category": "SPL Chinese Rice  & Noodles (Veg)",
+		"itemName": "Hon Kong Fried Rice / Noodles",
+		"type": "Veg",
+		"price": 90
+	},
+	{
+		"id": 107,
+		"category": "SPL Chinese Rice  & Noodles (Veg)",
+		"itemName": "Singapore Fried Rice / Noodles",
+		"type": "Veg",
+		"price": 90
+	},
+	{
+		"id": 108,
+		"category": "SPL Chinese Rice  & Noodles (Veg)",
+		"itemName": "Veg Combination Rice",
+		"type": "Veg",
+		"price": 100
+	},
+	{
+		"id": 109,
+		"category": "SPL Chinese Rice  & Noodles (Non-Veg)",
+		"itemName": "Triple Fried Rice",
+		"type": "Non-Veg",
+		"price": 120
+	},
+	{
+		"id": 110,
+		"category": "SPL Chinese Rice  & Noodles (Non-Veg)",
+		"itemName": "Chicken Manchuri & Rice/Noodles",
+		"type": "Non-Veg",
+		"price": 110
+	},
+	{
+		"id": 111,
+		"category": "SPL Chinese Rice  & Noodles (Non-Veg)",
+		"itemName": "Butter Garlic Fried Rice / Noodles",
+		"type": "Non-Veg",
+		"price": 100
+	},
+	{
+		"id": 112,
+		"category": "SPL Chinese Rice  & Noodles (Non-Veg)",
+		"itemName": "Hon Kong Fried Rice / Noodles",
+		"type": "Non-Veg",
+		"price": 100
+	},
+	{
+		"id": 113,
+		"category": "SPL Chinese Rice  & Noodles (Non-Veg)",
+		"itemName": "Singapore Fried Rice / Noodles",
+		"type": "Non-Veg",
+		"price": 100
+	},
+	{
+		"id": 114,
+		"category": "SPL Chinese Rice  & Noodles (Non-Veg)",
+		"itemName": "Chicken Tikka Fried Rice / Noodles",
+		"type": "Non-Veg",
+		"price": 100
+	},
+	{
+		"id": 115,
+		"category": "Veg Sandwich",
+		"itemName": "Veg Sandwich",
+		"type": "Veg",
+		"price": 40
+	},
+	{
+		"id": 116,
+		"category": "Veg Sandwich",
+		"itemName": "Stuffed Aloo S/w",
+		"type": "Veg",
+		"price": 40
+	},
+	{
+		"id": 117,
+		"category": "Veg Sandwich",
+		"itemName": "Plain Cheese S/w",
+		"type": "Veg",
+		"price": 50
+	},
+	{
+		"id": 118,
+		"category": "Veg Sandwich",
+		"itemName": "Chatni Cheese S/w",
+		"type": "Veg",
+		"price": 50
+	},
+	{
+		"id": 119,
+		"category": "Veg Sandwich",
+		"itemName": "Mushroom S/w",
+		"type": "Veg",
+		"price": 50
+	},
+	{
+		"id": 120,
+		"category": "Veg Sandwich",
+		"itemName": "Corn S/w",
+		"type": "Veg",
+		"price": 50
+	},
+	{
+		"id": 121,
+		"category": "Veg Sandwich",
+		"itemName": "Veg Pizza S/w",
+		"type": "Veg",
+		"price": 60
+	},
+	{
+		"id": 122,
+		"category": "Veg Sandwich",
+		"itemName": "Paneer",
+		"type": "Veg",
+		"price": 60
+	},
+	{
+		"id": 123,
+		"category": "Veg Sandwich",
+		"itemName": "Paneer Corn Pizza S/w",
+		"type": "Veg",
+		"price": 70
+	},
+	{
+		"id": 124,
+		"category": "Veg Sandwich",
+		"itemName": "Veg Cutlet S/w",
+		"type": "Veg",
+		"price": 60
+	},
+	{
+		"id": 125,
+		"category": "Veg Sandwich",
+		"itemName": "Nutella Banana S/w",
+		"type": "Veg",
+		"price": 70
+	},
+	{
+		"id": 126,
+		"category": "Rools",
+		"itemName": "Paneer Roll",
+		"type": "Veg",
+		"price": 50
+	},
+	{
+		"id": 127,
+		"category": "Rools",
+		"itemName": "Egg Roll",
+		"type": "Non-Veg",
+		"price": 50
+	},
+	{
+		"id": 128,
+		"category": "Rools",
+		"itemName": "Chicken Roll",
+		"type": "Non-Veg",
+		"price": 50
+	},
+	{
+		"id": 129,
+		"category": "Rools",
+		"itemName": "Chicken Tikka Roll",
+		"type": "Non-Veg",
+		"price": 60
+	},
+	{
+		"id": 130,
+		"category": "Burgers",
+		"itemName": "Veg Burger",
+		"type": "Veg",
+		"price": 60
+	},
+	{
+		"id": 131,
+		"category": "Burgers",
+		"itemName": "Big Burger Veg",
+		"type": "Veg",
+		"price": 100
+	},
+	{
+		"id": 132,
+		"category": "Burgers",
+		"itemName": "Paneer Burger",
+		"type": "Non-Veg",
+		"price": 80
+	},
+	{
+		"id": 133,
+		"category": "Burgers",
+		"itemName": "Egg Burger",
+		"type": "Non-Veg",
+		"price": 80
+	},
+	{
+		"id": 134,
+		"category": "Burgers",
+		"itemName": "Chicken Burger",
+		"type": "Non-Veg",
+		"price": 80
+	},
+	{
+		"id": 135,
+		"category": "Burgers",
+		"itemName": "Big Chicken Burger",
+		"type": "Non-Veg",
+		"price": 110
+	},
+	{
+		"id": 136,
+		"category": "Burgers",
+		"itemName": "Chicken Pizza Burger",
+		"type": "Non-Veg",
+		"price": 75
+	},
+	{
+		"id": 137,
+		"category": "Burgers",
+		"itemName": "Chicken Club Burger",
+		"type": "Non-Veg",
+		"price": 75
+	},
+	{
+		"id": 138,
+		"category": "Burgers",
+		"itemName": "BBQ Chicken Burger",
+		"type": "Non-Veg",
+		"price": 80
+	},
+	{
+		"id": 139,
+		"category": "Pizza",
+		"itemName": "Chicken Pizza",
+		"type": "Non-Veg",
+		"price": 140
+	},
+	{
+		"id": 140,
+		"category": "Pizza",
+		"itemName": "Chicken Bull Pepper Pizza",
+		"type": "Non-Veg",
+		"price": 160
+	},
+	{
+		"id": 141,
+		"category": "Pizza",
+		"itemName": "880 Chicken Pizza",
+		"type": "Non-Veg",
+		"price": 160
+	},
+	{
+		"id": 142,
+		"category": "Pizza",
+		"itemName": "Corn Pizza",
+		"type": "Veg",
+		"price": 120
+	},
+	{
+		"id": 143,
+		"category": "Pizza",
+		"itemName": "Paneer Pizza",
+		"type": "Veg",
+		"price": 130
+	},
+	{
+		"id": 144,
+		"category": "Pizza",
+		"itemName": "Mushroom Pizza",
+		"type": "Veg",
+		"price": 120
+	},
+	{
+		"id": 145,
+		"category": "Pizza",
+		"itemName": "Mix Veg Pizza",
+		"type": "Veg",
+		"price": 150
+	},
+	{
+		"id": 146,
+		"category": "Pizza",
+		"itemName": "Paneer BBQ Pizza",
+		"type": "Veg",
+		"price": 150
+	},
+	{
+		"id": 147,
+		"category": "Pizza",
+		"itemName": "Plain Chest Pizza",
+		"type": "Veg",
+		"price": 140
+	},
+	{
+		"id": 148,
+		"category": "Pizza",
+		"itemName": "Jalepeno Pizza",
+		"type": "Veg",
+		"price": 14000
+	},
+	{
+		"id": 149,
+		"category": "Non-Veg Sandwich",
+		"itemName": "Half Fry S/w",
+		"type": "Non-Veg",
+		"price": 45
+	},
+	{
+		"id": 150,
+		"category": "Non-Veg Sandwich",
+		"itemName": "Egg S/w",
+		"type": "Non-Veg",
+		"price": 40
+	},
+	{
+		"id": 151,
+		"category": "Non-Veg Sandwich",
+		"itemName": "Egg Burji S/w",
+		"type": "Non-Veg",
+		"price": 45
+	},
+	{
+		"id": 152,
+		"category": "Non-Veg Sandwich",
+		"itemName": "Omlette S/w",
+		"type": "Non-Veg",
+		"price": 45
+	},
+	{
+		"id": 153,
+		"category": "Non-Veg Sandwich",
+		"itemName": "Masala Egg S/w",
+		"type": "Non-Veg",
+		"price": 45
+	},
+	{
+		"id": 154,
+		"category": "Non-Veg Sandwich",
+		"itemName": "Grilled Chicken S/w",
+		"type": "Non-Veg",
+		"price": 50
+	},
+	{
+		"id": 155,
+		"category": "Non-Veg Sandwich",
+		"itemName": "Chicken Coleslaw S/w",
+		"type": "Non-Veg",
+		"price": 50
+	},
+	{
+		"id": 156,
+		"category": "Non-Veg Sandwich",
+		"itemName": "Salami Chicken S/w",
+		"type": "Non-Veg",
+		"price": 70
+	},
+	{
+		"id": 157,
+		"category": "Non-Veg Sandwich",
+		"itemName": "Garlic Chicken Cheese S/w",
+		"type": "Non-Veg",
+		"price": 70
+	},
+	{
+		"id": 158,
+		"category": "Non-Veg Sandwich",
+		"itemName": "Chicken Tikka S/w",
+		"type": "Non-Veg",
+		"price": 60
+	},
+	{
+		"id": 159,
+		"category": "Non-Veg Sandwich",
+		"itemName": "Smoke Chicken S/w",
+		"type": "Non-Veg",
+		"price": 60
+	},
+	{
+		"id": 160,
+		"category": "Non-Veg Sandwich",
+		"itemName": "BBQ Chicken S/w",
+		"type": "Non-Veg",
+		"price": 60
+	},
+	{
+		"id": 161,
+		"category": "Non-Veg Sandwich",
+		"itemName": "Chicken Pizza S/w",
+		"type": "Non-Veg",
+		"price": 70
+	},
+	{
+		"id": 162,
+		"category": "Pasta",
+		"itemName": "Thai Chill Pasta",
+		"type": "Veg",
+		"price": 80
+	},
+	{
+		"id": 163,
+		"category": "Pasta",
+		"itemName": "Thai Chill Pasta",
+		"type": "Non-Veg",
+		"price": 90
+	},
+	{
+		"id": 164,
+		"category": "Pasta",
+		"itemName": "Panne Pasta White Sauce",
+		"type": "Veg",
+		"price": 80
+	},
+	{
+		"id": 165,
+		"category": "Pasta",
+		"itemName": "Panne Pasta White Sauce",
+		"type": "Non-Veg",
+		"price": 50
+	},
+	{
+		"id": 166,
+		"category": "SPL Omlettes",
+		"itemName": "Cheese Omlette",
+		"type": "Non-Veg",
+		"price": 60
+	},
+	{
+		"id": 167,
+		"category": "SPL Omlettes",
+		"itemName": "Chicken Tikka Omlette",
+		"type": "Non-Veg",
+		"price": 80
+	},
+	{
+		"id": 168,
+		"category": "SPL Omlettes",
+		"itemName": "Corn Omlette",
+		"type": "Non-Veg",
+		"price": 60
+	},
+	{
+		"id": 169,
+		"category": "SPL Omlettes",
+		"itemName": "Cheese Chicken Omlette",
+		"type": "Non-Veg",
+		"price": 70
+	},
+	{
+		"id": 170,
+		"category": "Maggi",
+		"itemName": "Plain Maggi",
+		"type": "Veg",
+		"price": 25
+	},
+	{
+		"id": 171,
+		"category": "Maggi",
+		"itemName": "Veg Maggi",
+		"type": "Veg",
+		"price": 30
+	},
+	{
+		"id": 172,
+		"category": "Maggi",
+		"itemName": "Egg Maggi",
+		"type": "Non-Veg",
+		"price": 35
+	},
+	{
+		"id": 173,
+		"category": "Maggi",
+		"itemName": "Mushroom Maggi",
+		"type": "Veg",
+		"price": 40
+	},
+	{
+		"id": 174,
+		"category": "Maggi",
+		"itemName": "Paneer Maggi",
+		"type": "Veg",
+		"price": 50
+	},
+	{
+		"id": 175,
+		"category": "Maggi",
+		"itemName": "Veg Schezwan Maggi",
+		"type": "Veg",
+		"price": 40
+	},
+	{
+		"id": 176,
+		"category": "Maggi",
+		"itemName": "Egg Schezwan Maggi",
+		"type": "Non-Veg",
+		"price": 45
+	},
+	{
+		"id": 177,
+		"category": "Maggi",
+		"itemName": "Chicken Maggi",
+		"type": "Non-Veg",
+		"price": 50
+	},
+	{
+		"id": 178,
+		"category": "Maggi",
+		"itemName": "Chicken Schezwan Maggi",
+		"type": "Non-Veg",
+		"price": 60
+	},
+	{
+		"id": 179,
+		"category": "Juice",
+		"itemName": "Lime Juice",
+		"type": "Veg",
+		"price": 20
+	},
+	{
+		"id": 180,
+		"category": "Juice",
+		"itemName": "Lime Mint Honey",
+		"type": "Veg",
+		"price": 30
+	},
+	{
+		"id": 181,
+		"category": "Juice",
+		"itemName": "Musumbi",
+		"type": "Veg",
+		"price": 30
+	},
+	{
+		"id": 182,
+		"category": "Juice",
+		"itemName": "Water Melon",
+		"type": "Veg",
+		"price": 30
+	},
+	{
+		"id": 183,
+		"category": "Juice",
+		"itemName": "Pineapple",
+		"type": "Veg",
+		"price": 40
+	},
+	{
+		"id": 184,
+		"category": "Juice",
+		"itemName": "Papaya",
+		"type": "Veg",
+		"price": 40
+	},
+	{
+		"id": 185,
+		"category": "Juice",
+		"itemName": "Musk Melon",
+		"type": "Veg",
+		"price": 40
+	},
+	{
+		"id": 186,
+		"category": "Juice",
+		"itemName": "Grape",
+		"type": "Veg",
+		"price": 40
+	},
+	{
+		"id": 187,
+		"category": "Juice",
+		"itemName": "Orange",
+		"type": "Veg",
+		"price": 40
+	},
+	{
+		"id": 188,
+		"category": "Juice",
+		"itemName": "Apple Lemon Drink",
+		"type": "Veg",
+		"price": 50
+	},
+	{
+		"id": 189,
+		"category": "Juice",
+		"itemName": "Chiller",
+		"type": "Veg",
+		"price": 50
+	},
+	{
+		"id": 190,
+		"category": "Juice",
+		"itemName": "Ice Tea",
+		"type": "Veg",
+		"price": 50
+	},
+	{
+		"id": 191,
+		"category": "Juice",
+		"itemName": "Mojito",
+		"type": "Veg",
+		"price": 50
+	},
+	{
+		"id": 192,
+		"category": "Juice",
+		"itemName": "Blue Mojito",
+		"type": "Veg",
+		"price": 60
+	},
+	{
+		"id": 193,
+		"category": "Fruit Milk Shakes",
+		"itemName": "Banana",
+		"type": "Veg",
+		"price": 50
+	},
+	{
+		"id": 194,
+		"category": "Fruit Milk Shakes",
+		"itemName": "Papaya",
+		"type": "Veg",
+		"price": 50
+	},
+	{
+		"id": 195,
+		"category": "Fruit Milk Shakes",
+		"itemName": "Sapota",
+		"type": "Veg",
+		"price": 50
+	},
+	{
+		"id": 196,
+		"category": "Fruit Milk Shakes",
+		"itemName": "Musk Melon",
+		"type": "Veg",
+		"price": 50
+	},
+	{
+		"id": 197,
+		"category": "Fruit Milk Shakes",
+		"itemName": "Dates Shake",
+		"type": "Veg",
+		"price": 60
+	},
+	{
+		"id": 198,
+		"category": "Fruit Milk Shakes",
+		"itemName": "Apple",
+		"type": "Veg",
+		"price": "(Season)"
+	},
+	{
+		"id": 199,
+		"category": "Fruit Milk Shakes",
+		"itemName": "Pomegranate",
+		"type": "Veg",
+		"price": "(Season)"
+	},
+	{
+		"id": 200,
+		"category": "Fruit Milk Shakes",
+		"itemName": "Custard Apple",
+		"type": "Veg",
+		"price": "(Season)"
+	},
+	{
+		"id": 201,
+		"category": "Fruit Milk Shakes",
+		"itemName": "Butter Fruits",
+		"type": "Veg",
+		"price": "(Season)"
+	},
+	{
+		"id": 202,
+		"category": "Fruit Milk Shakes",
+		"itemName": "Mango",
+		"type": "Veg",
+		"price": "(Season)"
+	},
+	{
+		"id": 203,
+		"category": "Fruit Milk Shakes",
+		"itemName": "Dragen",
+		"type": "Veg",
+		"price": "(Season)"
+	},
+	{
+		"id": 204,
+		"category": "Ice Cream Milk Shake",
+		"itemName": "Vanilla",
+		"type": "Veg",
+		"price": 60
+	},
+	{
+		"id": 205,
+		"category": "Ice Cream Milk Shake",
+		"itemName": "Vanilla",
+		"type": "Veg",
+		"price": 80
+	},
+	{
+		"id": 206,
+		"category": "Ice Cream Milk Shake",
+		"itemName": "Strawberry",
+		"type": "Veg",
+		"price": 60
+	},
+	{
+		"id": 207,
+		"category": "Ice Cream Milk Shake",
+		"itemName": "Strawberry",
+		"type": "Veg",
+		"price": 80
+	},
+	{
+		"id": 208,
+		"category": "Ice Cream Milk Shake",
+		"itemName": "Butter Scotch",
+		"type": "Veg",
+		"price": 60
+	},
+	{
+		"id": 209,
+		"category": "Ice Cream Milk Shake",
+		"itemName": "Butter Scotch",
+		"type": "Veg",
+		"price": 80
+	},
+	{
+		"id": 210,
+		"category": "Ice Cream Milk Shake",
+		"itemName": "Chocolates",
+		"type": "Veg",
+		"price": 60
+	},
+	{
+		"id": 211,
+		"category": "Ice Cream Milk Shake",
+		"itemName": "Chocolates",
+		"type": "Veg",
+		"price": 80
+	},
+	{
+		"id": 212,
+		"category": "Ice Cream Milk Shake",
+		"itemName": "Pista",
+		"type": "Veg",
+		"price": 60
+	},
+	{
+		"id": 213,
+		"category": "Ice Cream Milk Shake",
+		"itemName": "Pista",
+		"type": "Veg",
+		"price": 80
+	},
+	{
+		"id": 214,
+		"category": "Special Milk Shakes",
+		"itemName": "Cold Coffee",
+		"type": "Veg",
+		"price": 60
+	},
+	{
+		"id": 215,
+		"category": "Special Milk Shakes",
+		"itemName": "Cold Coffee",
+		"type": "Veg",
+		"price": 80
+	},
+	{
+		"id": 216,
+		"category": "Special Milk Shakes",
+		"itemName": "Oreo Shakes",
+		"type": "Veg",
+		"price": 60
+	},
+	{
+		"id": 217,
+		"category": "Special Milk Shakes",
+		"itemName": "Oreo Shakes",
+		"type": "Veg",
+		"price": 80
+	},
+	{
+		"id": 218,
+		"category": "Special Milk Shakes",
+		"itemName": "Cold Horlicks",
+		"type": "Veg",
+		"price": 60
+	},
+	{
+		"id": 219,
+		"category": "Special Milk Shakes",
+		"itemName": "Cold Horlicks",
+		"type": "Veg",
+		"price": 80
+	},
+	{
+		"id": 220,
+		"category": "Special Milk Shakes",
+		"itemName": "Badam",
+		"type": "Veg",
+		"price": 60
+	},
+	{
+		"id": 221,
+		"category": "Special Milk Shakes",
+		"itemName": "Badam",
+		"type": "Veg",
+		"price": 80
+	},
+	{
+		"id": 222,
+		"category": "Special Milk Shakes",
+		"itemName": "Snickers Shake",
+		"type": "Veg",
+		"price": 60
+	},
+	{
+		"id": 223,
+		"category": "Special Milk Shakes",
+		"itemName": "Snickers Shake",
+		"type": "Veg",
+		"price": 80
+	},
+	{
+		"id": 224,
+		"category": "Special Milk Shakes",
+		"itemName": "Kitkat Shake",
+		"type": "Veg",
+		"price": 60
+	},
+	{
+		"id": 225,
+		"category": "Special Milk Shakes",
+		"itemName": "Kitkat Shake",
+		"type": "Veg",
+		"price": 80
+	},
+	{
+		"id": 226,
+		"category": "Special Milk Shakes",
+		"itemName": "Dry Fruits",
+		"type": "Veg",
+		"price": 80
+	},
+	{
+		"id": 227,
+		"category": "Special Milk Shakes",
+		"itemName": "Dry Fruits",
+		"type": "Veg",
+		"price": 100
+	},
+	{
+		"id": 228,
+		"category": "Special Milk Shakes",
+		"itemName": "Tender Coconut Shake with Ice Cream",
+		"type": "Veg",
+		"price": 90
+	},
+	{
+		"id": 229,
+		"category": "Smoothies",
+		"itemName": "Chikku Banana Smoothie",
+		"type": "Veg",
+		"price": 60
+	},
+	{
+		"id": 230,
+		"category": "Smoothies",
+		"itemName": "Musk Apple Smoothie",
+		"type": "Veg",
+		"price": 60
+	},
+	{
+		"id": 231,
+		"category": "Smoothies",
+		"itemName": "Cherry Vanilla Smoothie",
+		"type": "Veg",
+		"price": 60
+	},
+	{
+		"id": 232,
+		"category": "Smoothies",
+		"itemName": "Peanut Butter Smoothie",
+		"type": "Veg",
+		"price": 50
+	},
+	{
+		"id": 233,
+		"category": "Smoothies",
+		"itemName": "Chocolate Banana Smoothie",
+		"type": "Veg",
+		"price": 60
+	},
+	{
+		"id": 234,
+		"category": "Smoothies",
+		"itemName": "Tropical Mange Smoothie",
+		"type": "Veg",
+		"price": 60
+	},
+	{
+		"id": 235,
+		"category": "Smoothies",
+		"itemName": "Apple Strawberry Crunch",
+		"type": "Veg",
+		"price": 60
+	},
+	{
+		"id": 236,
+		"category": "Smoothies",
+		"itemName": "Strawberry Banana Smoothie",
+		"type": "Veg",
+		"price": 60
+	},
+	{
+		"id": 237,
+		"category": "SPL Icecream",
+		"itemName": "Gudbad",
+		"type": "Veg",
+		"price": 100
+	},
+	{
+		"id": 238,
+		"category": "SPL Icecream",
+		"itemName": "Excess Chocolate",
+		"type": "Veg",
+		"price": 80
+	},
+	{
+		"id": 239,
+		"category": "SPL Icecream",
+		"itemName": "Hot Chocolate Fodze",
+		"type": "Veg",
+		"price": 70
+	},
+	{
+		"id": 240,
+		"category": "SPL Icecream",
+		"itemName": "Triple Sunday",
+		"type": "Veg",
+		"price": 100
+	},
+	{
+		"id": 241,
+		"category": "SPL Icecream",
+		"itemName": "Icecream With Nuts",
+		"type": "Veg",
+		"price": 70
+	},
+	{
+		"id": 242,
+		"category": "SPL Icecream",
+		"itemName": "Sizzling Browni",
+		"type": "Veg",
+		"price": 90
+	},
+	{
+		"id": 243,
+		"category": "SPL Icecream",
+		"itemName": "Banana Split",
+		"type": "Veg",
+		"price": 100
+	},
+	{
+		"id": 244,
+		"category": "SPL Icecream",
+		"itemName": "Fruit Salad with Ice Cream",
+		"type": "Veg",
+		"price": 70
+	},
+	{
+		"id": 245,
+		"category": "SPL Icecream",
+		"itemName": "Sanmathi Special lee Cream",
+		"type": "Veg",
+		"price": 120
+	},
+	{
+		"id": 246,
+		"category": "SPL Icecream",
+		"itemName": "Tiramisu Ice Cream",
+		"type": "Veg",
+		"price": 120
+	}
+]
