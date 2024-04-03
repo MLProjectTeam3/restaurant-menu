@@ -16,8 +16,8 @@
   >
     <a href="/home">Home</a>
     <a href="/home#about">AboutUs</a>
-    <a href="contact">Contact</a>
-    <a href="/home#reviews">Reviews</a>
+    <a href="/home#contact">Contact</a>
+    <!-- <a href="/home#reviews">Reviews</a> -->
   </div>
 
   <div class="flex justify-center items-center space-x-8">
