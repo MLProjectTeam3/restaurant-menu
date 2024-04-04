@@ -21,6 +21,7 @@
       .toURL()
   );
 
+  const category=["Veg Starters","Non Veg Starters","Roti","Veg Curry","Non Veg Curry","Fried Rice","Rice","Stuff Paratha","Noodles","SPL Chinese Rice  & Noodles (Veg)","SPL Chinese Rice  & Noodles (Non-Veg)","Veg Sandwich","Rools","Burgers","Pizza","Non-Veg Sandwich","Pasta","SPL Omlettes","Maggi","Juice","Fruit Milk Shakes","Ice Cream Milk Shake","Special Milk Shakes","Smoothies","SPL Icecream"]
 
 </script>
 
