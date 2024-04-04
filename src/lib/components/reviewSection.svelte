@@ -7,4 +7,5 @@
 <div class="flex flex-col mt-28 items-left w-1/2 md:w-1/3 gap-6">
     <h1 class="text-7xl text-primary w-full text-center">REVIEWS</h1>
 </div>
+
 </div>
