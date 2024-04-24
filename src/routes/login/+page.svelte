@@ -40,7 +40,7 @@
         <p>Forgot password?</p>
       </div>
       <div class="min-h-16" />
-      <Button class="text-2xl p-5 w-1/3 self-center">Login</Button>
+      <a href="/menu" class="text-2xl p-5 w-1/3 self-center"><Button >Login</Button></a>
     </form>
   </Card.Content>
   <Card.Footer>
