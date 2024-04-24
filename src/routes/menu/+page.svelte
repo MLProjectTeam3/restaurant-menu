@@ -2,9 +2,7 @@
   import { Cloudinary } from "@cloudinary/url-gen";
   import * as Card from "$lib/components/ui/card";
   import * as DropdownMenu from "$lib/components/ui/dropdown-menu"
-  
-
-  const cld = new Cloudinary({
+    const cld = new Cloudinary({
     cloud: {
       cloudName: "dxgkiabgb",
       apiKey: "599262657695471",
@@ -51,15 +49,20 @@
   ];
 </script>
 
-<div class="mt-[9vh] flex flex-col items-center">
+<div class="mt-[11vh] flex flex-col items-center">
   <h1 class="text-4xl text-primary">MENU</h1>
   <input
     type="text"
     placeholder="Search here"
-    class="w-[80%] h-10 shadow-lg shadow-zinc-400 rounded-full px-4 text-xl mt-6 bg-background text-primary placeholder-primary border border-b-2 border-primary border-opacity-15"
+    class="w-[80%] mb-4 h-10 shadow-lg shadow-zinc-400 rounded-full px-4 text-xl mt-6 bg-background text-primary placeholder-primary border border-b-2 border-primary border-opacity-15"
   />
   <DropdownMenu.Root>
-    <DropdownMenu.Trigger class="bottom-6 bg-white border-2 text-2xl w-[90%] p-2 shadow-xl">Categories</DropdownMenu.Trigger>
+    <DropdownMenu.Trigger class="bottom-6 float:left bg-[#934F2E] text-[#FFECD1] flex border-2 text-2xl rounded-full w-[40%] p-2 shadow-xl">
+      <div class="flex justify-center items-center mx-3">
+        <div class="mx-5">Categories</div>
+        <div>&Or;</div> 
+      </div>
+    </DropdownMenu.Trigger>
     <DropdownMenu.Content>
       <DropdownMenu.Group class="max-h-[60vh] overflow-scroll">
         <DropdownMenu.Label class="text-2xl">Select Category</DropdownMenu.Label>

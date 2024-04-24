@@ -2,6 +2,29 @@
   import { Checkbox } from "$lib/components/ui/checkbox";
   import { Button } from "$lib/components/ui/button";
   import * as Card from "$lib/components/ui/card";
+  const userCredentials = {
+    user1: "password1",
+    user2: "password2"
+    // Add more username-password pairs as needed
+  };
+  let username = "";
+  let password = "";
+  let errorMessage = "";
+  function login() {
+    // Check if the entered username exists in the userCredentials
+    if (username in userCredentials) {
+      // Check if the entered password matches the password stored for the username
+      if (userCredentials[username] === password) {
+        alert("Login successful!");
+        // You can redirect the user to another page or perform other actions here
+      } else {
+        errorMessage = "Incorrect password. Please try again.";
+      }
+    } else {
+      errorMessage = "Username not found. Please try again.";
+    }
+  }
+
 </script>
 
 <div class="max-h-full flex justify-center items-center ">
