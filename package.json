@@ -26,6 +26,7 @@
 		"@cloudinary/url-gen": "^1.19.0",
 		"bits-ui": "^0.19.7",
 		"clsx": "^2.1.0",
+		"svelte-carousel": "^1.0.25",
 		"svelte-radix": "^1.1.0",
 		"tailwind-merge": "^2.2.1",
 		"tailwind-variants": "^0.2.0"
