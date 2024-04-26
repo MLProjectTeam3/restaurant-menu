@@ -77,35 +77,41 @@
       </DropdownMenu.Group>
     </DropdownMenu.Content>
   </DropdownMenu.Root>
-  <div class="mt-8 flex flex-col items-center max-h-[70vh] overflow-scroll">
+  <div class="mt-8 flex lg:w-full flex-col items-center max-h-[70vh]  overflow-scroll">
     {#each categories as category}
       <h1 class="text-4xl pb-4" id={category}>{category}</h1>
 
-      {#each menu_items as item, index}
-        {#if item.category === category}
-          <Card.Root class="mb-4">
-            <Card.Content
-              class="w-[90vw] h-[120px] flex justify-between border pt-6 items-center"
-            >
-              <img
-                src={imageUrls[index]}
-                alt={item.itemName}
-                class="h-24 w-24 object-cover rounded-md"
-              />
-              <div class="flex flex-col text-2xl">
-                <h1>{item.itemName}</h1>
-                <h2>&#8377;{item.price}</h2>
-              </div>
-              <Button
-                class=" bg-[#D9D9D9] px-6 h-16 rounded-md flex justify-center items-center text-2xl text-primary"
-                >Add</Button
+      <div class="sm:grid sm:grid-cols-2 sm:gap-3 lg:grid-cols-3 sm:w-full sm:px-10">
+        {#each menu_items as item, index}
+          {#if item.category === category}
+            <Card.Root class="mb-4">
+              <Card.Content
+                class="w-full h-[120px] flex justify-between border pt-6 items-center"
               >
-            </Card.Content>
-          </Card.Root>
-        {/if}
-      {/each}
+                <img
+                  src={imageUrls[index]}
+                  alt={item.itemName}
+                  class="h-24 w-24 object-cover rounded-md"
+                />
+                <div class="flex flex-col text-2xl">
+                  <h1>{item.itemName}</h1>
+                  <h2>&#8377;{item.price}</h2>
+                </div>
+                <Button
+                  class=" bg-[#D9D9D9] px-6 h-16 rounded-md flex justify-center items-center text-2xl text-primary"
+                  >Add</Button
+                >
+              </Card.Content>
+            </Card.Root>
+          {/if}
+        {/each}
+      </div>
     {/each}
   </div>
-  <a href="#Veg%20Starters"><Button class="fixed bottom-6 right-6 rounded-full w-16 h-16 text-2xl font-extrabold bg-primary">&and;</Button></a>
-
+  <a href="#Veg%20Starters"
+    ><Button
+      class="fixed bottom-6 right-6 rounded-full w-16 h-16 text-2xl font-extrabold bg-primary"
+      >&and;</Button
+    ></a
+  >
 </div>
