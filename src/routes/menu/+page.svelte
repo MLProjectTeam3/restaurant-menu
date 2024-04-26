@@ -53,12 +53,12 @@
   ];
 </script>
 
-<div class="mt-[9vh] flex flex-col items-center">
+<div class="mt-[11vh] flex flex-col items-center">
   <h1 class="text-4xl text-primary">MENU</h1>
   <input
     type="text"
     placeholder="Search here"
-    class="w-[80%] h-10 shadow-lg shadow-zinc-400 rounded-full px-4 text-xl mt-6 bg-background text-primary placeholder-primary border border-b-2 border-primary border-opacity-15"
+    class="w-[80%] mb-4 h-10 shadow-lg shadow-zinc-400 rounded-full px-4 text-xl mt-6 bg-background text-primary placeholder-primary border border-b-2 border-primary border-opacity-15"
   />
   <div class="flex mt-4 w-[70%] py-4 justify-between items-center">
     <DropdownMenu.Root>
