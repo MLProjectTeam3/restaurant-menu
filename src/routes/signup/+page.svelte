@@ -1,7 +1,34 @@
-<!-- <script>
+<script>
 	import { Checkbox } from "$lib/components/ui/checkbox";
 	import { Button } from "$lib/components/ui/button";
 	import * as Card from "$lib/components/ui/card";
+	import { authHandlers, authStore } from "../../stores/authStore.js";
+	let register = false;
+	let email = "";
+	let password = "";
+	let confirmPassword = "";
+	async function handleSubmit() {
+		if (!email || !password || (register && !confirmPassword)) {
+			return;
+		}
+
+		if (register && password === confirmPassword) {
+			try {
+				await authHandlers.signup(email, password);
+			} catch (err) {
+				console.log(err);
+			}
+		} else {
+			try {
+				await authHandlers.login(email, password);
+			} catch (err) {
+				console.log(err);
+			}
+		}
+		if ($authStore.currentUser) {
+			window.location.href = "/privateDashbord";
+		}
+	}
 </script>
 
 <div class="max-h-full flex justify-center items-center">
@@ -17,7 +44,11 @@
 		<Card.Header
 			class="text-6xl md:text-4xl md:pt-16 w-2/3 text-center text-primary"
 		>
-			<Card.Title><h1 class="font-normal">CAFE SANMATHI</h1></Card.Title>
+			<Card.Title
+				><h1 class="font-normal">
+					{register ? "Signup" : "Login"}
+				</h1></Card.Title
+			>
 		</Card.Header>
 		<Card.Content>
 			<form
@@ -26,42 +57,89 @@
 			>
 				<p class="text-primary text-2xl md:text-base">Email</p>
 				<input
+					bind:value={email}
 					type="email"
 					class="p-2 border-2 rounded-xl border-secondary w-[80vw] md:w-full h-10 md:h-8 mb-4"
+					placeholder="Email"
 				/>
-				<p class="text-primary text-2xl md:text-base">Phone Number</p>
+				<!-- <p class="text-primary text-2xl md:text-base">Phone Number</p>
 				<input
 					type="number"
-					class="p-2 border-2 rounded-xl border-secondary w-[80vw] md:w-full h-10 mb-4 md:h-8"
-				/>
+                    class="p-2 border-2 rounded-xl border-secondary w-[80vw] md:w-full h-10 mb-4 md:h-8"
+					placeholder="Number"
+				/> -->
 				<p class="text-primary text-2xl md:text-base">Password</p>
 				<input
+					bind:value={password}
 					type="password"
 					class="p-2 border-2 rounded-xl border-secondary w-[80vw] md:w-full h-10 mb-4 md:h-8"
+					placeholder="Password"
 				/>
-				<p class="text-primary text-2xl md:text-base">
-					Confirm Password
-				</p>
-				<input
-					type="password"
-					class="p-2 border-2 rounded-xl border-secondary w-[80vw] md:w-full h-10 mb-4 md:h-8"
-				/>
-				<a href="/menu"
-					><Button
+				{#if register}
+					<p class="text-primary text-2xl md:text-base">
+						Confirm Password
+					</p>
+					<input
+						bind:value={confirmPassword}
+						type="password"
+						class="p-2 border-2 rounded-xl border-secondary w-[80vw] md:w-full h-10 mb-4 md:h-8"
+						placeholder="Password"
+					/>
+					<Button
+						on:click={handleSubmit}
 						class="text-2xl p-8 rounded-xl self-center mt-16 md:mt-4 md:p-6 md:text-base md:ml-[70px]"
 						>Create Account</Button
-					></a
-				>
+					>
+				{:else}
+					<Button
+						on:click={handleSubmit}
+						class="text-2xl p-8 rounded-xl self-center mt-16 md:mt-4 md:p-6 md:text-base md:ml-[70px]"
+						>Login</Button
+					>
+				{/if}
 			</form>
 		</Card.Content>
 		<Card.Footer>
+			{#if register}
+				<div
+					class="text-2xl md:text-lg"
+					role="button"
+					tabindex="0"
+					on:click={() => {
+						register = false;
+					}}
+					on:keydown={() => {}}
+				>
+					Already have an account? Log in
+				</div>
+			{:else}
+				<div
+					class="text-2xl md:text-lg"
+					role="button"
+					tabindex="0"
+					on:click={() => {
+						register = true;
+					}}
+					on:keydown={() => {}}
+				>
+					Don't have an account?
+					<p>Sign Up</p>
+				</div>
+				<!-- <div
+					role="button"
+					tabindex="0"
+					on:click={() => {
+						authHandlers.resetPassword(email);
+					}}
+					on:keydown={() => {}}
+				>
+					Forgot Password?
+				</div> -->
+			{/if}
+		</Card.Footer>
+		<!-- <Card.Footer>
 			<p class="text-2xl md:text-lg">Already have an account?</p>
 			<a href="/login"><u class="text-2xl md:text-lg">Login</u></a>
-		</Card.Footer>
+		</Card.Footer> -->
 	</Card.Root>
-</div> -->
-<script>
-	import Auth from "$lib/components/Auth.svelte";
-</script>
-
-<Auth />
+</div>
