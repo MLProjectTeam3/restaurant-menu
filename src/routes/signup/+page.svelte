@@ -1,7 +1,37 @@
 <script>
-  import { Checkbox } from "$lib/components/ui/checkbox";
+  // @ts-nocheck
+
   import { Button } from "$lib/components/ui/button";
   import * as Card from "$lib/components/ui/card";
+  import { User, getUsersFromFile, saveUsersToFile } from "$lib/user.js";
+
+  let email = "";
+  let phone = "";
+  let password = "";
+  let confirmPassword = "";
+
+  const handleSignUp = async () => {
+    if (password != confirmPassword) {
+      alert("Passwords do not match!");
+      confirmPassword = "";
+      return;
+    }
+    const newUser = new User(email, phone, password);
+    const existingUsers = await getUsersFromFile();
+    const existingEmails = existingUsers.map((user) => user.email);
+
+    if (existingEmails.includes(newUser.email)) {
+      alert("Email already exists!");
+      email = "";
+      return;
+    }
+    existingUsers.push(newUser);
+    console.log(JSON.stringify(existingUsers))
+    await saveUsersToFile(existingUsers);
+
+    // window.location.href = "/menu";
+    //I want to redirect to /menu route. How can I do that here?
+  };
 </script>
 
 <div class="max-h-full flex justify-center items-center">
@@ -20,33 +50,35 @@
       <Card.Title><h1 class="font-normal">CAFE SANMATHI</h1></Card.Title>
     </Card.Header>
     <Card.Content>
-      <form
-        action=""
-        class="flex flex-col md:block md:w-full"
-      >
+      <form action="" class="flex flex-col md:block md:w-full">
         <p class="text-primary text-2xl md:text-base">Email</p>
         <input
           type="email"
           class="p-2 border-2 rounded-xl border-secondary w-[80vw] md:w-full h-10 md:h-8 mb-4"
+          bind:value={email}
         />
         <p class="text-primary text-2xl md:text-base">Phone Number</p>
         <input
           type="number"
           class="p-2 border-2 rounded-xl border-secondary w-[80vw] md:w-full h-10 mb-4 md:h-8"
+          bind:value={phone}
         />
         <p class="text-primary text-2xl md:text-base">Password</p>
         <input
           type="password"
           class="p-2 border-2 rounded-xl border-secondary w-[80vw] md:w-full h-10 mb-4 md:h-8"
+          bind:value={password}
         />
         <p class="text-primary text-2xl md:text-base">Confirm Password</p>
         <input
           type="password"
           class="p-2 border-2 rounded-xl border-secondary w-[80vw] md:w-full h-10 mb-4 md:h-8"
-        />
-        <a href="/menu"><Button class="text-2xl p-8 rounded-xl self-center mt-16 md:mt-4 md:p-6 md:text-base md:ml-[70px]"
+          bind:value={confirmPassword}
+        /><Button
+          on:click={handleSignUp}
+          class="text-2xl p-8 rounded-xl self-center mt-16 md:mt-4 md:p-6 md:text-base md:ml-[70px]"
           >Create Account</Button
-        ></a>
+        >
       </form>
     </Card.Content>
     <Card.Footer>
