@@ -26,7 +26,7 @@
 			}
 		}
 		if ($authStore.currentUser) {
-			window.location.href = "/privateDashbord";
+			window.location.href = "/";
 		}
 	}
 </script>
@@ -85,6 +85,7 @@
 						class="p-2 border-2 rounded-xl border-secondary w-[80vw] md:w-full h-10 mb-4 md:h-8"
 						placeholder="Password"
 					/>
+
 					<Button
 						on:click={handleSubmit}
 						class="text-2xl p-8 rounded-xl self-center mt-16 md:mt-4 md:p-6 md:text-base md:ml-[70px]"

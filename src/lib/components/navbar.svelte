@@ -1,6 +1,13 @@
 <script>
 	import { Button } from "./ui/button";
 	import * as DropdownMenu from "$lib/components/ui/dropdown-menu";
+	import { auth } from "../../lib/firebase/firebase.client";
+	import { authHandlers, authStore } from "../../stores/authStore";
+	let email;
+	authStore.subscribe((curr) => {
+		console.log("CURR", curr);
+		email = curr?.currentUser?.email;
+	});
 </script>
 
 <div
@@ -64,36 +71,58 @@
 		</DropdownMenu.Trigger>
 		<DropdownMenu.Content class="w-1/2 bg-background">
 			<DropdownMenu.Group>
-				<DropdownMenu.Item class="text-xl"
-					><a href="/home">Home</a></DropdownMenu.Item
-				><DropdownMenu.Separator />
-				<DropdownMenu.Item class="text-xl"
-					><a href="/menu">Menu</a></DropdownMenu.Item
-				><DropdownMenu.Separator />
-				<DropdownMenu.Item class="text-xl"
-					><a href="/home#about">AboutUs</a></DropdownMenu.Item
-				><DropdownMenu.Separator />
-				<DropdownMenu.Item class="text-xl"
-					><a href="/home#contact">Contact</a></DropdownMenu.Item
-				><DropdownMenu.Separator />
-				<DropdownMenu.Item class="text-xl"
-					><a href="/home#reviews">Reviews</a></DropdownMenu.Item
-				><DropdownMenu.Separator />
+				<a href="/home">
+					<DropdownMenu.Item class="text-xl">Home</DropdownMenu.Item>
+				</a>
+				<DropdownMenu.Separator />
+				<a href="/menu">
+					<DropdownMenu.Item class="text-xl">Menu</DropdownMenu.Item
+					><DropdownMenu.Separator />
+				</a>
+				<a href="/home#about">
+					<DropdownMenu.Item class="text-xl"
+						>AboutUs</DropdownMenu.Item
+					><DropdownMenu.Separator />
+				</a>
+				<a href="/home#contact">
+					<DropdownMenu.Item class="text-xl"
+						>Contact</DropdownMenu.Item
+					><DropdownMenu.Separator />
+				</a>
+				<a href="/home#reviews">
+					<DropdownMenu.Item class="text-xl"
+						>Reviews</DropdownMenu.Item
+					><DropdownMenu.Separator />
+				</a>
 			</DropdownMenu.Group>
 			<DropdownMenu.Group
 				class="p-2 border-t border-primary border-opacity-25"
 			>
-				<div class="flex justify-between items-center">
-					<a href="/signup"
-						><Button variant="outline">LOGIN</Button></a
-					>
-					<a href="/cart"
-						><img
-							src="icons/shoppingCart.svg"
-							alt="menu"
-						/></a
-					>
-				</div>
+				{#if $authStore.currentUser}
+					<div class="flex justify-between items-center">
+						<h1>{email}</h1>
+						<button on:click={authHandlers.logout}>Logout</button>
+						<a href="/cart"
+							><img
+								src="icons/shoppingCart.svg"
+								alt="menu"
+							/></a
+						>
+					</div>
+				{:else}
+					<div class="flex justify-between items-center">
+						<a href="/signup"
+							><Button variant="outline">LOGIN</Button></a
+						>
+
+						<a href="/cart"
+							><img
+								src="icons/shoppingCart.svg"
+								alt="menu"
+							/></a
+						>
+					</div>
+				{/if}
 			</DropdownMenu.Group>
 		</DropdownMenu.Content>
 	</DropdownMenu.Root>
