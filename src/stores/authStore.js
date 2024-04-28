@@ -10,8 +10,9 @@ import { writable } from "svelte/store";
 import { auth } from "../lib/firebase/firebase.client";
 
 export const authStore = writable({
-	isLoading: true,
-	currentUser: null,
+	user: null,
+	loading: true,
+	data: {},
 });
 
 export const authHandlers = {

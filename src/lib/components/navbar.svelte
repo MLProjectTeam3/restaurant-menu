@@ -6,7 +6,7 @@
 	let email;
 	authStore.subscribe((curr) => {
 		console.log("CURR", curr);
-		email = curr?.currentUser?.email;
+		email = curr?.user?.email;
 	});
 </script>
 
@@ -43,7 +43,13 @@
 				class="h-7"
 			/>
 		</a>
-		<a href="/signup"><Button variant="outline">login</Button></a>
+		{#if $authStore.user}
+			<a href="/privateDashbord"
+				><Button variant="outline">{email}</Button></a
+			>
+		{:else}
+			<a href="/signup"><Button variant="outline">Login</Button></a>
+		{/if}
 	</div>
 </div>
 
@@ -98,9 +104,11 @@
 			<DropdownMenu.Group
 				class="p-2 border-t border-primary border-opacity-25"
 			>
-				{#if $authStore.currentUser}
+				{#if $authStore.user}
 					<div class="flex justify-between items-center">
-						<h1>{email}</h1>
+						<a href="/privateDashbord"
+							><Button variant="outline">{email}</Button></a
+						>
 						<button on:click={authHandlers.logout}>Logout</button>
 						<a href="/cart"
 							><img

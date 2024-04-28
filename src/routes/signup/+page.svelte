@@ -3,31 +3,40 @@
 	import { Button } from "$lib/components/ui/button";
 	import * as Card from "$lib/components/ui/card";
 	import { authHandlers, authStore } from "../../stores/authStore.js";
-	let register = false;
 	let email = "";
 	let password = "";
 	let confirmPassword = "";
+	let error = false;
+	let register = false;
+	let authenticating = false;
+
 	async function handleSubmit() {
-		if (!email || !password || (register && !confirmPassword)) {
+		if (authenticating) {
 			return;
 		}
+		if (!email || !password || (register && !confirmPassword)) {
+			error = true;
+			return;
+		}
+		authenticating = true;
 
-		if (register && password === confirmPassword) {
-			try {
-				await authHandlers.signup(email, password);
-			} catch (err) {
-				console.log(err);
-			}
-		} else {
-			try {
+		try {
+			if (!register) {
 				await authHandlers.login(email, password);
-			} catch (err) {
-				console.log(err);
+			} else {
+				await authHandlers.signup(email, password);
 			}
+		} catch (err) {
+			console.log("There was an auth error", err);
+			error = true;
+			authenticating = false;
 		}
-		if ($authStore.currentUser) {
-			window.location.href = "/";
+		if ($authStore.user) {
+			window.location.href = "/privateDashbord";
 		}
+	}
+	function handleRegister() {
+		register = !register;
 	}
 </script>
 
@@ -50,7 +59,13 @@
 				</h1></Card.Title
 			>
 		</Card.Header>
+
 		<Card.Content>
+			{#if error}
+				<p class="error">
+					The information you have entered is not correct
+				</p>
+			{/if}
 			<form
 				action=""
 				class="flex flex-col md:block md:w-full"
