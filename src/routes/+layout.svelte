@@ -54,6 +54,9 @@
 					email: user.email,
 					name: "",
 					phone: "",
+					itemNames: [],
+					itemPrice: [],
+					itemNum: [],
 				};
 				await setDoc(userRef, dataToSetToStore, { merge: true });
 			} else {

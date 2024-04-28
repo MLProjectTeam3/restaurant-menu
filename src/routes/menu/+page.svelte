@@ -73,6 +73,44 @@
 			.quality("auto")
 			.toURL()
 	);
+	import { getDoc, doc, setDoc } from "firebase/firestore";
+	import { authStore } from "../../stores/authStore.js";
+	import { db } from "$lib/firebase/firebase.client";
+	let nameItem = [];
+	let pricesItem = [];
+	let numItem = [];
+	let iname = [];
+	let iprice = [];
+	let inum = [];
+
+	authStore.subscribe((curr) => {
+		console.log("CURR", curr);
+		iname = curr.data.itemNames;
+		iprice = curr.data.itemPrice;
+		inum = curr.data.itemNum;
+	});
+
+	// let error = false;
+	async function addToCart(item, index) {
+		iname = [...iname, item.itemName];
+		iprice = [...iprice, item.price];
+		inum = [...inum, index];
+		// nameItem = [iname];
+		try {
+			const userRef = doc(db, "users", $authStore.user.uid);
+			await setDoc(
+				userRef,
+				{
+					itemNames: iname,
+					itemPrice: iprice,
+					itemNum: inum,
+				},
+				{ merge: true }
+			);
+		} catch (err) {
+			console.log("There was an error saving your information");
+		}
+	}
 </script>
 
 <div class="max-h-[89vh] mt-[11vh] flex flex-col items-center">
@@ -155,6 +193,8 @@
 											<h2>&#8377;{item.price}</h2>
 										</div>
 										<Button
+											on:click={() =>
+												addToCart(item, index)}
 											class=" bg-[#D9D9D9] px-6 h-16 rounded-md flex justify-center items-center text-2xl text-primary"
 											>Add</Button
 										>

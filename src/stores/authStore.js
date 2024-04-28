@@ -35,17 +35,21 @@ export const authHandlers = {
 	},
 	updateEmail: async (email) => {
 		authStore.update((curr) => {
+			if (!curr.user) {
+				return curr; // or handle this case accordingly
+			}
+
 			return {
 				...curr,
-				currentUser: {
-					...curr.currentUser,
+				user: {
+					...curr.user,
 					email: email,
 				},
 			};
 		});
-		await updateEmail(auth.currentUser, email);
+		await updateEmail(auth.user, email);
 	},
 	updatePassword: async (password) => {
-		await updatePassword(auth.currentUser, password);
+		await updatePassword(auth.user, password);
 	},
 };

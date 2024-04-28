@@ -11,14 +11,10 @@
 	let authenticating = false;
 
 	async function handleSubmit() {
-		if (authenticating) {
-			return;
-		}
 		if (!email || !password || (register && !confirmPassword)) {
 			error = true;
 			return;
 		}
-		authenticating = true;
 
 		try {
 			if (!register) {
@@ -26,13 +22,13 @@
 			} else {
 				await authHandlers.signup(email, password);
 			}
+			if ($authStore.user) {
+				window.location.href = "/home";
+			}
 		} catch (err) {
 			console.log("There was an auth error", err);
 			error = true;
 			authenticating = false;
-		}
-		if ($authStore.user) {
-			window.location.href = "/privateDashbord";
 		}
 	}
 	function handleRegister() {
