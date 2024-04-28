@@ -1,45 +1,41 @@
 <script>
 	import { name } from "@cloudinary/url-gen/actions/namedTransformation";
-
 	// import AuthReset from "../../components/AuthReset.svelte";
 	import { auth, db } from "../../lib/firebase/firebase.client";
 	import { authHandlers, authStore } from "../../stores/authStore";
 	import { getDoc, doc, setDoc } from "firebase/firestore";
 	let email;
-	authStore.subscribe((curr) => {
-		console.log("CURR", curr);
-		email = curr?.user?.email;
-	});
 
 	let names = "";
 	let phones = "";
 	let currphone = "";
 	let currTodo = "";
 	let error = false;
-
 	authStore.subscribe((curr) => {
-		names = curr.data;
-		phones = curr.data;
+		console.log("CURR", curr);
+		names = curr.data.name;
+		phones = curr.data.phone;
+		email = curr?.user?.email;
 	});
+	// authStore.subscribe((curr) => {
+	// 	names = curr.data;
+	// 	phones = curr.data;
+	// });
 	function addTo() {
 		error = false;
 		if (!currTodo || !currphone) {
 			error = true;
 		}
-
 		names = currTodo;
 		phones = currphone;
 	}
-
 	async function saveTo() {
 		error = false;
 		if (!currTodo || !names || !phones) {
 			error = true;
 		}
-
 		names = currTodo;
 		phones = currphone;
-
 		try {
 			const userRef = doc(db, "users", $authStore.user.uid);
 			await setDoc(
@@ -62,7 +58,7 @@
 <p>hi</p>
 <p>hi</p>
 <p>hi</p>
-
+hi
 {#if $authStore.user}
 	<div>
 		<h1>CURRENT USER: {email}</h1>
@@ -84,13 +80,18 @@
 />
 <br />
 <br />
-<!-- <button on:click={addTo}>ADD</button> -->
 <br />
 <br />
 <button on:click={saveTo}>
 	<i class="fa-regular fa-floppy-disk" />
 	<p>Save</p></button
 >
+<main>
+	<div class="todo">
+		<p>{names}</p>
+		<p>{phones}</p>
+	</div>
+</main>
 
 <style>
 	div {
@@ -100,7 +101,6 @@
 		justify-content: center;
 		align-items: center;
 	}
-
 	h1 {
 		text-align: center;
 	}
