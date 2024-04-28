@@ -48,7 +48,7 @@
 				><Button variant="outline">{email}</Button></a
 			>
 		{:else}
-			<a href="/signup"><Button variant="outline">Login</Button></a>
+			<a href="/home"><Button variant="outline">Login</Button></a>
 		{/if}
 	</div>
 </div>
@@ -109,7 +109,6 @@
 						<a href="/privateDashbord"
 							><Button variant="outline">{email}</Button></a
 						>
-						<button on:click={authHandlers.logout}>Logout</button>
 						<a href="/cart"
 							><img
 								src="icons/shoppingCart.svg"
