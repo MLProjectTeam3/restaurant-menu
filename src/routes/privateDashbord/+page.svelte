@@ -92,16 +92,3 @@ hi
 		<p>{phones}</p>
 	</div>
 </main>
-
-<style>
-	div {
-		flex: 1;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-	}
-	h1 {
-		text-align: center;
-	}
-</style>
