@@ -48,7 +48,7 @@
 				><Button variant="outline">{email}</Button></a
 			>
 		{:else}
-			<a href="/home"><Button variant="outline">Login</Button></a>
+			<a href="/signup"><Button variant="outline">Login</Button></a>
 		{/if}
 	</div>
 </div>

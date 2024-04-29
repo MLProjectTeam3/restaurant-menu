@@ -22,7 +22,7 @@
 			const currentPath = window.location.pathname;
 
 			if (!user && !nonAuthRoutes.includes(currentPath)) {
-				window.location.href = "/";
+				window.location.href = "/home";
 				return;
 			}
 

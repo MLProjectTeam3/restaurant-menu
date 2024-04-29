@@ -21,14 +21,7 @@
 	// 	names = curr.data;
 	// 	phones = curr.data;
 	// });
-	function addTo() {
-		error = false;
-		if (!currTodo || !currphone) {
-			error = true;
-		}
-		names = currTodo;
-		phones = currphone;
-	}
+
 	async function saveTo() {
 		error = false;
 		if (!currTodo || !names || !phones) {
@@ -82,10 +75,7 @@ hi
 <br />
 <br />
 <br />
-<button on:click={saveTo}>
-	<i class="fa-regular fa-floppy-disk" />
-	<p>Save</p></button
->
+<button on:click={saveTo}> Save</button>
 <main>
 	<div class="todo">
 		<p>{names}</p>
