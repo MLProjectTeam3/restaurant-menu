@@ -2,8 +2,16 @@
   import { Button } from "./ui/button";
   import * as DropdownMenu from "$lib/components/ui/dropdown-menu";
   import { auth } from "$lib/firebase/firebase.config";
+  import { Icon } from "svelte-icons-pack";
+  import { FaCircleUser } from "svelte-icons-pack/fa";
+  import { LuShoppingCart } from "svelte-icons-pack/lu";
+  import { Separator } from "bits-ui";
+  import { signOut } from 'firebase/auth'
+  import { FlatToast, ToastContainer, toasts } from "svelte-toasts";
+  import { goto } from "$app/navigation";
 
-  const user = auth.currentUser;
+  let user;
+  $: user = auth.currentUser;
 </script>
 
 <div
@@ -26,14 +34,48 @@
 
   <div class="flex justify-center items-center space-x-8">
     <a href="/cart">
-      <img src="icons/shoppingCart.svg" alt="Shopping Cart" class="h-7" />
+      <Icon src={LuShoppingCart} size="32" className="stroke-primary" />
     </a>
 
     <!-- Render the profile options button if user exists(ie. user has signed in) -->
-    {#if user}
-      
+    {#if user?.displayName}
+      <p class="text-primary font-serif text-3xl text-opacity-50">|</p>
+      <DropdownMenu.Root>
+        <DropdownMenu.Trigger
+          ><Icon
+            src={FaCircleUser}
+            size="32"
+            className="fill-primary"
+          /></DropdownMenu.Trigger
+        >
+        <DropdownMenu.Content>
+          <DropdownMenu.Group class="flex flex-col items-center m-4 gap-1">
+            <DropdownMenu.Label>My Account</DropdownMenu.Label>
+            <DropdownMenu.Separator />
+            <img src="images/landingBg4.jpg" alt="profile" class="w-24 h-24 rounded-md">
+            <h1 class="text-xl">
+              {user.displayName}
+            </h1>
+            <h1 class="text-xl">
+              {user.phoneNumber}
+            </h1>
+            <DropdownMenu.Separator />
+              <Button class="bg-red-600" on:click={()=>{
+                signOut(auth)
+                  .then(()=>{
+                    toasts.success("Logout Successfull!");
+                    goto('/home');
+                  })
+                  .catch((error)=>{
+                    toasts.error("Failed to Logout!"+ " " + error.message);
+                  });
+                  
+              }}>LOGOUT</Button>
+          </DropdownMenu.Group>
+        </DropdownMenu.Content>
+      </DropdownMenu.Root>
     {:else}
-    <a href="/login"><Button variant="outline">LOGIN</Button></a>
+      <a href="/login"><Button variant="outline">LOGIN</Button></a>
     {/if}
   </div>
 </div>
@@ -70,10 +112,13 @@
       </DropdownMenu.Group>
       <DropdownMenu.Group class="p-2 border-t border-primary border-opacity-25">
         <div class="flex justify-between items-center">
-          <a href="/login"><Button variant="outline">LOGIN</Button></a>
+          <a href="/login"><Button variant="outline" >LOGIN</Button></a>
           <a href="/cart"><img src="icons/shoppingCart.svg" alt="menu" /></a>
         </div>
       </DropdownMenu.Group>
     </DropdownMenu.Content>
   </DropdownMenu.Root>
+  <ToastContainer placement="bottom-right" let:data={data}>
+    <FlatToast {data} /> <!-- Provider template for your toasts -->
+  </ToastContainer>
 </div>
