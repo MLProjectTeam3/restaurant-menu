@@ -1,4 +1,6 @@
 <script>
+// @ts-nocheck
+
   import { Button } from "./ui/button";
   import * as DropdownMenu from "$lib/components/ui/dropdown-menu";
   import { auth } from "$lib/firebase/firebase.config";
@@ -6,12 +8,14 @@
   import { FaCircleUser } from "svelte-icons-pack/fa";
   import { LuShoppingCart } from "svelte-icons-pack/lu";
   import { Separator } from "bits-ui";
-  import { signOut } from 'firebase/auth'
+  import { onAuthStateChanged, signOut } from 'firebase/auth'
   import { FlatToast, ToastContainer, toasts } from "svelte-toasts";
   import { goto } from "$app/navigation";
 
-  let user;
-  $: user = auth.currentUser;
+    let current_user;
+    onAuthStateChanged(auth, (user) => {
+      current_user = user;
+    })
 </script>
 
 <div
@@ -38,7 +42,7 @@
     </a>
 
     <!-- Render the profile options button if user exists(ie. user has signed in) -->
-    {#if user?.displayName}
+    {#if current_user}
       <p class="text-primary font-serif text-3xl text-opacity-50">|</p>
       <DropdownMenu.Root>
         <DropdownMenu.Trigger
@@ -54,10 +58,10 @@
             <DropdownMenu.Separator />
             <img src="images/landingBg4.jpg" alt="profile" class="w-24 h-24 rounded-md">
             <h1 class="text-xl">
-              {user.displayName}
+              {current_user.displayName}
             </h1>
             <h1 class="text-xl">
-              {user.phoneNumber}
+              {current_user.phoneNumber}
             </h1>
             <DropdownMenu.Separator />
               <Button class="bg-red-600" on:click={()=>{
