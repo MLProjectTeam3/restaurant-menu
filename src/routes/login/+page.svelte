@@ -2,6 +2,28 @@
   import { Checkbox } from "$lib/components/ui/checkbox";
   import { Button } from "$lib/components/ui/button";
   import * as Card from "$lib/components/ui/card";
+  import { auth } from "$lib/firebase/firebase.config";
+  import { signInWithEmailAndPassword } from "firebase/auth";
+  import { toasts } from "svelte-toasts";
+  import { goto } from "$app/navigation";
+
+  let email = "";
+  let password = "";
+
+  const handleLogin = () => {
+    signInWithEmailAndPassword(auth,email,password)
+      .then(()=>{
+        toasts.success("Signed in Successfully!");
+        goto('/menu');
+      })
+      .catch((error)=>{
+        toasts.error(error.message);
+        email = "";
+        password = "";
+      })
+  }
+
+
 </script>
 
 <div class="max-h-full flex justify-center items-center ">
@@ -24,6 +46,7 @@
         id="email"
         type="email"
         class="p-2 border-2 rounded-xl border-secondary w-[80vw] md:w-full h-10"
+        bind:value={email}
       />
       <div class="min-h-6" />
       <p class="text-primary text-2xl">Password</p>
@@ -31,6 +54,7 @@
         id="password"
         type="password"
         class="p-2 border-2 rounded-xl border-secondary w-[80vw]  md:w-full h-10"
+        bind:value={password}
       />
 
       <div class="min-h-2" />
@@ -42,7 +66,7 @@
         <p>Forgot password?</p>
       </div>
       <div class="min-h-16" />
-      <Button >Login</Button>
+      <Button on:click={handleLogin} >Login</Button>
     </form>
   </Card.Content>
   <Card.Footer>
