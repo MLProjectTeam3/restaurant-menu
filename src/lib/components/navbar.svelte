@@ -1,6 +1,9 @@
 <script>
   import { Button } from "./ui/button";
   import * as DropdownMenu from "$lib/components/ui/dropdown-menu";
+  import { auth } from "$lib/firebase/firebase.config";
+
+  const user = auth.currentUser;
 </script>
 
 <div
@@ -25,7 +28,13 @@
     <a href="/cart">
       <img src="icons/shoppingCart.svg" alt="Shopping Cart" class="h-7" />
     </a>
+
+    <!-- Render the profile options button if user exists(ie. user has signed in) -->
+    {#if user}
+      
+    {:else}
     <a href="/login"><Button variant="outline">LOGIN</Button></a>
+    {/if}
   </div>
 </div>
 

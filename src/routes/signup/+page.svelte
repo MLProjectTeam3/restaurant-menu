@@ -1,22 +1,49 @@
 <script>
+// @ts-nocheck
+
 
   import { Button } from "$lib/components/ui/button";
   import * as Card from "$lib/components/ui/card";
+  import { auth } from "$lib/firebase/firebase.config";
+  import { toasts, ToastContainer, FlatToast} from "svelte-toasts"
+  import {  updateProfile, createUserWithEmailAndPassword } from "firebase/auth";
+  import { goto } from "$app/navigation";
 
   let email = "";
   let phone = "";
   let password = "";
   let confirmPassword = "";
+  let name = "";
 
   const handleSignUp = async () => {
     // if both passwords to not match
     if (password != confirmPassword) {
-      alert("Passwords do not match!");
+      toasts.error("Passwords do not match!");
       confirmPassword = "";
       return;
     }
-    // else condition here
-    
+
+    createUserWithEmailAndPassword(auth,email,password)
+      .then(()=>{
+        // Get the user variable :
+        const user = auth.currentUser;
+
+        // Also store name and phone number
+        updateProfile(user,{
+          displayName: name,
+          phone: phone,
+        })
+
+        toasts.success('Account Created Successfully!');
+        
+        goto('/menu');
+
+      })
+      .catch((error)=>{
+        const errorMessage = error.message;
+        toasts.error(errorMessage);
+      });
+
   };
 </script>
 
@@ -31,38 +58,44 @@
     class="z-20 pt-[12vh] md:pt-0 md:mt-24 md:h-[80vh] md:w-1/5 md:border-4 md:shadow-lg border-none rounded-none md:rounded-lg shadow-none w-screen flex flex-col items-center justify-between h-screen"
   >
     <Card.Header
-      class="text-6xl md:text-4xl md:pt-16 w-2/3 text-center text-primary"
+      class="text-6xl md:text-4xl md:pt-12 w-2/3 text-center text-primary"
     >
       <Card.Title><h1 class="font-normal">CAFE SANMATHI</h1></Card.Title>
     </Card.Header>
     <Card.Content>
       <form action="" class="flex flex-col md:block md:w-full">
-        <p class="text-primary text-2xl md:text-base">Email</p>
+        <p class="text-primary md:ml-2 text-2xl md:text-base">Name</p>
+        <input
+          type="text"
+          class="p-2 border-2 rounded-xl border-secondary w-[80vw] md:w-full h-10 md:h-8 mb-4"
+          bind:value={name}
+        />
+        <p class="text-primary md:ml-2 text-2xl md:text-base">Email</p>
         <input
           type="email"
           class="p-2 border-2 rounded-xl border-secondary w-[80vw] md:w-full h-10 md:h-8 mb-4"
           bind:value={email}
         />
-        <p class="text-primary text-2xl md:text-base">Phone Number</p>
+        <p class="text-primary md:ml-2 text-2xl md:text-base">Phone Number</p>
         <input
           type="number"
           class="p-2 border-2 rounded-xl border-secondary w-[80vw] md:w-full h-10 mb-4 md:h-8"
           bind:value={phone}
         />
-        <p class="text-primary text-2xl md:text-base">Password</p>
+        <p class="text-primary md:ml-2 text-2xl md:text-base">Password</p>
         <input
           type="password"
           class="p-2 border-2 rounded-xl border-secondary w-[80vw] md:w-full h-10 mb-4 md:h-8"
           bind:value={password}
         />
-        <p class="text-primary text-2xl md:text-base">Confirm Password</p>
+        <p class="text-primary md:ml-2 text-2xl md:text-base">Confirm Password</p>
         <input
           type="password"
           class="p-2 border-2 rounded-xl border-secondary w-[80vw] md:w-full h-10 mb-4 md:h-8"
           bind:value={confirmPassword}
         /><Button
           on:click={handleSignUp}
-          class="text-2xl p-8 rounded-xl self-center mt-16 md:mt-4 md:p-6 md:text-base md:ml-[70px]"
+          class="text-2xl p-8 rounded-xl self-center mt-16 md:mt-1 md:p-2 md:text-base md:w-full"
           >Create Account</Button
         >
       </form>
@@ -72,4 +105,7 @@
       <a href="/login"><u class="text-2xl md:text-lg">Login</u></a>
     </Card.Footer>
   </Card.Root>
+  <ToastContainer placement="bottom-right" let:data={data}>
+    <FlatToast {data} /> <!-- Provider template for your toasts -->
+  </ToastContainer>
 </div>
