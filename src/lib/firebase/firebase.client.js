@@ -7,14 +7,13 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-	apiKey: "AIzaSyDBl4z7wk6gUs6lCov_b3pMm6FXmsUW6ZI",
-	authDomain: "restaurant-database-f27d9.firebaseapp.com",
-	databaseURL:
-		"https://restaurant-database-f27d9-default-rtdb.firebaseio.com",
-	projectId: "restaurant-database-f27d9",
-	storageBucket: "restaurant-database-f27d9.appspot.com",
-	messagingSenderId: "257625192971",
-	appId: "1:257625192971:web:9961d458adec5d7179650e",
+	apiKey: import.meta.env.VITE_APIKEY,
+	authDomain: import.meta.env.VITE_AUTHDOMAIN,
+	databaseURL: import.meta.env.VITE_DATABASE_URL,
+	projectId: import.meta.env.VITE_PROJECTID,
+	storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+	messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+	appId: import.meta.env.VITE_APPID,
 };
 
 // Initialize Firebase
