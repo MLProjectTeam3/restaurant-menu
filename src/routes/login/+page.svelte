@@ -21,12 +21,14 @@
     <form action="" class="pb-24 md:pb-0 md:max-w-[20vw] flex flex-col justify-between">
       <p class="text-primary text-2xl">Email</p>
       <input
+        id="email"
         type="email"
         class="p-2 border-2 rounded-xl border-secondary w-[80vw] md:w-full h-10"
       />
       <div class="min-h-6" />
       <p class="text-primary text-2xl">Password</p>
       <input
+        id="password"
         type="password"
         class="p-2 border-2 rounded-xl border-secondary w-[80vw]  md:w-full h-10"
       />
@@ -40,7 +42,7 @@
         <p>Forgot password?</p>
       </div>
       <div class="min-h-16" />
-      <a href="/menu" class="text-2xl p-5 w-1/3 self-center"><Button >Login</Button></a>
+      <Button >Login</Button>
     </form>
   </Card.Content>
   <Card.Footer>

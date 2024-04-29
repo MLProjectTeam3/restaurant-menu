@@ -1,9 +1,7 @@
 <script>
-  // @ts-nocheck
 
   import { Button } from "$lib/components/ui/button";
   import * as Card from "$lib/components/ui/card";
-  import { User, getUsersFromFile, saveUsersToFile } from "$lib/user.js";
 
   let email = "";
   let phone = "";
@@ -11,26 +9,14 @@
   let confirmPassword = "";
 
   const handleSignUp = async () => {
+    // if both passwords to not match
     if (password != confirmPassword) {
       alert("Passwords do not match!");
       confirmPassword = "";
       return;
     }
-    const newUser = new User(email, phone, password);
-    const existingUsers = await getUsersFromFile();
-    const existingEmails = existingUsers.map((user) => user.email);
-
-    if (existingEmails.includes(newUser.email)) {
-      alert("Email already exists!");
-      email = "";
-      return;
-    }
-    existingUsers.push(newUser);
-    console.log(JSON.stringify(existingUsers))
-    await saveUsersToFile(existingUsers);
-
-    // window.location.href = "/menu";
-    //I want to redirect to /menu route. How can I do that here?
+    // else condition here
+    
   };
 </script>
 
