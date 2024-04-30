@@ -10,7 +10,7 @@
   import { goto } from "$app/navigation";
 
   let email = "";
-  let phone = "";
+  let phone = 0;
   let password = "";
   let confirmPassword = "";
   let name = "";
@@ -31,7 +31,7 @@
         // Also store name and phone number
         updateProfile(user,{
           displayName: name,
-          phone: phone,
+          phoneNumber: phone,
         })
 
         toasts.success('Account Created Successfully!');

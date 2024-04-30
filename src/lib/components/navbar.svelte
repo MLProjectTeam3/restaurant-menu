@@ -1,29 +1,43 @@
 <script>
-  // @ts-nocheck
+// @ts-nocheck
+
   import { Button } from "./ui/button";
   import * as DropdownMenu from "$lib/components/ui/dropdown-menu";
   import { auth } from "$lib/firebase/firebase.config";
   import { Icon } from "svelte-icons-pack";
   import { FaCircleUser } from "svelte-icons-pack/fa";
   import { LuShoppingCart } from "svelte-icons-pack/lu";
-  import { onAuthStateChanged, signOut } from "firebase/auth";
+  import { Separator } from "bits-ui";
+  import { onAuthStateChanged, signOut } from 'firebase/auth'
   import { FlatToast, ToastContainer, toasts } from "svelte-toasts";
   import { goto } from "$app/navigation";
+  import { onMount } from 'svelte' ;
 
-  let current_user;
-  onAuthStateChanged(auth, (user) => {
-    current_user = user;
-  });
-  const handleLogout = () => {
-    signOut(auth)
-      .then(() => {
-        toasts.success("Logout Successfull!");
-        goto("/home");
-      })
-      .catch((error) => {
-        toasts.error("Failed to Logout!" + " " + error.message);
+    let current_user;
+    onAuthStateChanged(auth, (user) => {
+      current_user = user;
+    })
+  
+  let widget;
+
+  onMount(() => {
+    if('cloudinary' in window) {
+      widget=window.cloudinary.createUploadWidget({
+        cloudName:import.meta.env.VITE_CLOUDINARY_CLOUD,
+        uploadPreset: 'mabmow43'
+      }, (result) => {
+        console.log(result)
+        result.
       });
-  };
+    }
+  });
+
+  const handleClick = () => {
+      console.log("clicked",widget)
+    if(widget){
+      widget.open()
+    }
+  }
 </script>
 
 <div
@@ -64,11 +78,13 @@
           <DropdownMenu.Group class="flex flex-col items-center m-4 gap-1">
             <DropdownMenu.Label>My Account</DropdownMenu.Label>
             <DropdownMenu.Separator />
+
             <img
               src="images/landingBg4.jpg"
               alt="profile"
               class="w-24 h-24 rounded-md"
             />
+            <button on:click={handleClick}>edit</button>
             <h1 class="text-xl">
               {current_user.displayName}
             </h1>
@@ -76,7 +92,19 @@
               {current_user.phoneNumber}
             </h1>
             <DropdownMenu.Separator />
-            <Button class="bg-red-600" on:click={handleLogout}>LOGOUT</Button>
+            <Button
+              class="bg-red-600"
+              on:click={() => {
+                signOut(auth)
+                  .then(() => {
+                    toasts.success("Logout Successfull!");
+                    goto("/home");
+                  })
+                  .catch((error) => {
+                    toasts.error("Failed to Logout!" + " " + error.message);
+                  });
+              }}>LOGOUT</Button
+            >
           </DropdownMenu.Group>
         </DropdownMenu.Content>
       </DropdownMenu.Root>
@@ -125,7 +153,9 @@
         <DropdownMenu.Group
           class="p-2 border-t border-primary border-opacity-25"
         >
-          <DropdownMenu.Item class="p-0 items-start data-[highlighted]:bg-transparent flex flex-col gap-2">
+          <DropdownMenu.Item
+            class="p-0 items-start data-[highlighted]:bg-transparent flex flex-col gap-2"
+          >
             {#if current_user}
               <div class="flex gap-2">
                 <img
@@ -135,7 +165,9 @@
                 />
                 <h2 class="text-lg">{current_user.displayName}</h2>
               </div>
-              <Button class="bg-red-600 w-full" on:click={handleLogout}>LOGOUT</Button>
+              <Button class="bg-red-600 w-full" on:click={handleLogout}
+                >LOGOUT</Button
+              >
             {:else}
               <a href="/login"><Button variant="outline">LOGIN</Button></a>
             {/if}
