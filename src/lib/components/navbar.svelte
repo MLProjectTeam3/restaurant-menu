@@ -14,10 +14,10 @@
 	import { onMount } from "svelte";
 	import { doc, getDoc } from "firebase/firestore";
 
-	let current_user;
-	onAuthStateChanged(auth, (user) => {
-		current_user = user;
-	});
+	// let current_user;
+	// onAuthStateChanged((user) => {
+	//
+	// });
 
 	let widget;
 	let userData = null;
@@ -25,6 +25,7 @@
 
 	// Listen for authentication state changes
 	auth.onAuthStateChanged(async (user) => {
+		let current_user = user;
 		if (user) {
 			// User is logged in, update the UID
 			uid = user.uid;
@@ -127,7 +128,7 @@
 		</a>
 
 		<!-- Render the profile options button if user exists(ie. user has signed in) -->
-		{#if userData || auth.currentUser || uid}
+		{#if userData}
 			<p class="text-primary font-serif text-3xl text-opacity-50">|</p>
 			<DropdownMenu.Root>
 				<DropdownMenu.Trigger
@@ -199,7 +200,7 @@
 	</a>
 
 	<div class="flex gap-4">
-		{#if current_user || userData || uid}
+		{#if auth.currentUser || userData || uid}
 			<a href="/orders"
 				><Icon
 					src={LuShoppingCart}
@@ -239,7 +240,7 @@
 					<DropdownMenu.Item
 						class="p-0 items-start data-[highlighted]:bg-transparent flex flex-col gap-2"
 					>
-						{#if current_user || userData || uid}
+						{#if auth.currentUser || userData || uid}
 							<div class="flex gap-2">
 								<img
 									src="images/landingBg4.jpg"
