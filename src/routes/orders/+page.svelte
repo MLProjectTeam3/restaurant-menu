@@ -47,9 +47,12 @@
   class="mt-[7.2dvh] md:mt-[9.5dvh] h-[92.8dvh] md:h-[90.5dvh] bg-[#FFECD1] flex flex-col justify-between pt-12"
 >
   <h1 class="text-3xl w-full text-center">My Orders</h1>
-  <div>
+  <div class="lg:flex lg:flex-col lg:items-center">
     <!-- List of Orders -->
-    <div class="h-[68dvh] mx-4 overflow-scroll">
+    <div
+      class="h-[68dvh] lg:h-[65dvh] lg:w-[60%] mx-4 overflow-scroll"
+      style="scrollbar-width: none;"
+    >
       {#if my_orders.length === 0}
         <div class="h-full w-full flex items-center justify-center">
           <div
@@ -71,13 +74,13 @@
         <Card.Root
           class="mb-4 h-24 w-full justify-between px-4 flex items-center"
         >
-          <div class="flex gap-2 items-center">
+          <div class="flex gap-4 lg:gap-6 items-center">
             <img
               src={`https://res.cloudinary.com/${import.meta.env.VITE_CLOUDINARY_CLOUDNAME}/image/upload/f_auto/q_auto/v1/MENU/${item.id}?_a=DATAdtAAZAA0`}
               alt={item.itemName}
               class="h-20 w-20 object-cover rounded-md"
             />
-            <h1 class="text-xl">{item.itemName}</h1>
+            <h1 class="text-xl lg:text-2xl">{item.itemName}</h1>
           </div>
           <div class="flex flex-col text-3xl justify-evenly items-center">
             <h2>&#8377;{item.displayPrice}</h2>
@@ -104,7 +107,7 @@
     </div>
     <!-- Bottom Total price and place order button -->
     <div
-      class="bg-background h-[12dvh] flex items-center justify-between px-10"
+      class="bg-background border-2 border-accent border-opacity-30 lg:w-full lg:px-96 h-[12dvh] flex items-center justify-between px-10"
     >
       <h1 class="text-3xl">TOTAL - &#8377;{totalPrice}</h1>
 

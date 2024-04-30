@@ -10,6 +10,8 @@
   import { goto } from "$app/navigation";
   import { onAuthStateChanged } from "firebase/auth";
   import { auth } from "$lib/firebase/firebase.config";
+  import { Icon } from "svelte-icons-pack";
+  import { FaSolidAngleUp } from "svelte-icons-pack/fa";
 
   let vegOnly = false;
   const categories = [
@@ -154,6 +156,7 @@
     class="mt-8 flex lg:w-[90%] flex-col items-center max-h-[70vh] overflow-scroll"
     style="scrollbar-width: none;"
   >
+    <div id="start" />
     {#each matchingCategories as category}
       {#if !vegOnly || (vegOnly && category[1] === "veg")}
         <h1 class="text-4xl pb-4" id={category[0]}>{category[0]}</h1>
@@ -193,11 +196,12 @@
       {/if}
     {/each}
   </div>
-  <a href="#Veg%20Starters"
+  <a href="#start"
     ><Button
       class="fixed bottom-6 right-6 rounded-full w-16 h-16 text-2xl font-extrabold bg-primary"
-      >&and;</Button
-    ></a
+    >
+      <Icon src={FaSolidAngleUp} className="" />
+    </Button></a
   >
   <ToastContainer placement="top-left" theme="dark" duration="500" let:data>
     <FlatToast {data} />
