@@ -9,6 +9,8 @@
   import { onAuthStateChanged, signOut } from "firebase/auth";
   import { FlatToast, ToastContainer, toasts } from "svelte-toasts";
   import { goto } from "$app/navigation";
+  import * as Dialog from "$lib/components/ui/dialog"
+  
 
   let current_user;
   onAuthStateChanged(auth, (user) => {
