@@ -80,6 +80,16 @@
 			return null;
 		}
 	}
+	const handleLogout = () => {
+		signOut(auth)
+			.then(() => {
+				toasts.success("Logout Successfull!");
+				goto("/home");
+			})
+			.catch((error) => {
+				toasts.error("Failed to Logout!" + " " + error.message);
+			});
+	};
 </script>
 
 <div
@@ -108,7 +118,7 @@
 	</div>
 
 	<div class="flex justify-center items-center space-x-8">
-		<a href="/cart">
+		<a href="/orders">
 			<Icon
 				src={LuShoppingCart}
 				size="32"
@@ -188,47 +198,70 @@
 		<h1 class="text-2xl text-primary">CAFE SANMATHI</h1>
 	</a>
 
-	<DropdownMenu.Root>
-		<DropdownMenu.Trigger>
-			<img
-				src="icons/menu.svg"
-				alt="menu"
-			/>
-		</DropdownMenu.Trigger>
-		<DropdownMenu.Content class="w-1/2 bg-background">
-			<DropdownMenu.Group>
-				<DropdownMenu.Item class="text-xl"
-					><a href="/home">Home</a></DropdownMenu.Item
-				><DropdownMenu.Separator />
-				<DropdownMenu.Item class="text-xl"
-					><a href="/menu">Menu</a></DropdownMenu.Item
-				><DropdownMenu.Separator />
-				<DropdownMenu.Item class="text-xl"
-					><a href="/home#about">AboutUs</a></DropdownMenu.Item
-				><DropdownMenu.Separator />
-				<DropdownMenu.Item class="text-xl"
-					><a href="/home#contact">Contact</a></DropdownMenu.Item
-				><DropdownMenu.Separator />
-				<DropdownMenu.Item class="text-xl"
-					><a href="/home#reviews">Reviews</a></DropdownMenu.Item
-				><DropdownMenu.Separator />
-			</DropdownMenu.Group>
-			<DropdownMenu.Group
-				class="p-2 border-t border-primary border-opacity-25"
+	<div class="flex gap-4">
+		{#if current_user || userData || uid}
+			<a href="/orders"
+				><Icon
+					src={LuShoppingCart}
+					size="24"
+					className="stroke-primary"
+				/></a
 			>
-				<div class="flex justify-between items-center">
-					<a href="/login"><Button variant="outline">LOGIN</Button></a
+		{/if}
+		<DropdownMenu.Root>
+			<DropdownMenu.Trigger>
+				<img
+					src="icons/menu.svg"
+					alt="menu"
+				/>
+			</DropdownMenu.Trigger>
+			<DropdownMenu.Content class="w-1/2 bg-background">
+				<DropdownMenu.Group>
+					<DropdownMenu.Item class="text-xl"
+						><a href="/home">Home</a></DropdownMenu.Item
+					><DropdownMenu.Separator />
+					<DropdownMenu.Item class="text-xl"
+						><a href="/menu">Menu</a></DropdownMenu.Item
+					><DropdownMenu.Separator />
+					<DropdownMenu.Item class="text-xl"
+						><a href="/home#about">AboutUs</a></DropdownMenu.Item
+					><DropdownMenu.Separator />
+					<DropdownMenu.Item class="text-xl"
+						><a href="/home#contact">Contact</a></DropdownMenu.Item
+					><DropdownMenu.Separator />
+					<DropdownMenu.Item class="text-xl"
+						><a href="/home#reviews">Reviews</a></DropdownMenu.Item
+					><DropdownMenu.Separator />
+				</DropdownMenu.Group>
+				<DropdownMenu.Group
+					class="p-2 border-t border-primary border-opacity-25"
+				>
+					<DropdownMenu.Item
+						class="p-0 items-start data-[highlighted]:bg-transparent flex flex-col gap-2"
 					>
-					<a href="/cart"
-						><img
-							src="icons/shoppingCart.svg"
-							alt="menu"
-						/></a
-					>
-				</div>
-			</DropdownMenu.Group>
-		</DropdownMenu.Content>
-	</DropdownMenu.Root>
+						{#if current_user || userData || uid}
+							<div class="flex gap-2">
+								<img
+									src="images/landingBg4.jpg"
+									alt="profile"
+									class="h-8 w-8 rounded-full"
+								/>
+								<h2 class="text-lg">{userData.name}</h2>
+							</div>
+							<Button
+								class="bg-red-600 w-full"
+								on:click={handleLogout}>LOGOUT</Button
+							>
+						{:else}
+							<a href="/login"
+								><Button variant="outline">LOGIN</Button></a
+							>
+						{/if}
+					</DropdownMenu.Item>
+				</DropdownMenu.Group>
+			</DropdownMenu.Content>
+		</DropdownMenu.Root>
+	</div>
 	<ToastContainer
 		placement="bottom-right"
 		let:data
