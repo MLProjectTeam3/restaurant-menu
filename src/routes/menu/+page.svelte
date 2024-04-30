@@ -1,6 +1,4 @@
 <script>
-  // @ts-nocheck
-
   import * as Card from "$lib/components/ui/card";
   import * as DropdownMenu from "$lib/components/ui/dropdown-menu";
   import { Switch } from "$lib/components/ui/switch";
@@ -9,7 +7,9 @@
   import { FlatToast, ToastContainer, toasts } from "svelte-toasts";
   import menu_items from "./menu.json";
   import { Button } from "$lib/components/ui/button";
-  import { expoOut } from "svelte/easing";
+  import { goto } from "$app/navigation";
+  import { onAuthStateChanged } from "firebase/auth";
+  import { auth } from "$lib/firebase/firebase.config";
 
   let vegOnly = false;
   const categories = [
@@ -74,7 +74,16 @@
     my_orders = orders;
   });
 
+  let current_user;
+  onAuthStateChanged(auth, (user) => {
+    current_user = user;
+  });
+
   const addOrder = (item) => {
+    if (!current_user) {
+      goto("/login");
+      return;
+    }
     try {
       //check if item exists and if so increment count, else add item with count as 1
       let existing = false;

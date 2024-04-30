@@ -1,43 +1,53 @@
 <script>
-// @ts-nocheck
-
   import { Button } from "./ui/button";
   import * as DropdownMenu from "$lib/components/ui/dropdown-menu";
   import { auth } from "$lib/firebase/firebase.config";
   import { Icon } from "svelte-icons-pack";
   import { FaCircleUser } from "svelte-icons-pack/fa";
   import { LuShoppingCart } from "svelte-icons-pack/lu";
-  import { Separator } from "bits-ui";
-  import { onAuthStateChanged, signOut } from 'firebase/auth'
+  import { onAuthStateChanged, signOut } from "firebase/auth";
   import { FlatToast, ToastContainer, toasts } from "svelte-toasts";
   import { goto } from "$app/navigation";
-  import { onMount } from 'svelte' ;
+  import { onMount } from "svelte";
 
-    let current_user;
-    onAuthStateChanged(auth, (user) => {
-      current_user = user;
-    })
-  
+  let current_user;
+  onAuthStateChanged(auth, (user) => {
+    current_user = user;
+  });
+
   let widget;
 
   onMount(() => {
-    if('cloudinary' in window) {
-      widget=window.cloudinary.createUploadWidget({
-        cloudName:import.meta.env.VITE_CLOUDINARY_CLOUD,
-        uploadPreset: 'mabmow43'
-      }, (result) => {
-        console.log(result)
-        result.
-      });
+    if ("cloudinary" in window) {
+      widget = window.cloudinary.createUploadWidget(
+        {
+          cloudName: import.meta.env.VITE_CLOUDINARY_CLOUD,
+          uploadPreset: "mabmow43",
+        },
+        (result) => {
+          console.log(result);
+        }
+      );
     }
   });
 
   const handleClick = () => {
-      console.log("clicked",widget)
-    if(widget){
-      widget.open()
+    console.log("clicked", widget);
+    if (widget) {
+      widget.open();
     }
-  }
+  };
+
+  const handleLogout = () => {
+    signOut(auth)
+      .then(() => {
+        toasts.success("Logout Successfull!");
+        goto("/home");
+      })
+      .catch((error) => {
+        toasts.error("Failed to Logout!" + " " + error.message);
+      });
+  };
 </script>
 
 <div
