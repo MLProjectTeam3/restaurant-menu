@@ -45,7 +45,7 @@
   </div>
 
   <div class="flex justify-center items-center space-x-8">
-    <a href="/cart">
+    <a href="/orders">
       <Icon src={LuShoppingCart} size="32" className="stroke-primary" />
     </a>
 
@@ -96,7 +96,7 @@
 
   <div class="flex gap-4">
     {#if current_user}
-      <a href="/cart"
+      <a href="/orders"
         ><Icon src={LuShoppingCart} size="24" className="stroke-primary" /></a
       >
     {/if}
