@@ -11,11 +11,33 @@
   import { onAuthStateChanged, signOut } from 'firebase/auth'
   import { FlatToast, ToastContainer, toasts } from "svelte-toasts";
   import { goto } from "$app/navigation";
+  import { onMount } from 'svelte' ;
 
     let current_user;
     onAuthStateChanged(auth, (user) => {
       current_user = user;
     })
+  
+  let widget;
+
+  onMount(() => {
+    if('cloudinary' in window) {
+      widget=window.cloudinary.createUploadWidget({
+        cloudName:import.meta.env.VITE_CLOUDINARY_CLOUD,
+        uploadPreset: 'mabmow43'
+      }, (result) => {
+        console.log(result)
+        result.
+      });
+    }
+  });
+
+  const handleClick = () => {
+      console.log("clicked",widget)
+    if(widget){
+      widget.open()
+    }
+  }
 </script>
 
 <div
@@ -56,7 +78,11 @@
           <DropdownMenu.Group class="flex flex-col items-center m-4 gap-1">
             <DropdownMenu.Label>My Account</DropdownMenu.Label>
             <DropdownMenu.Separator />
-            <img src="images/landingBg4.jpg" alt="profile" class="w-24 h-24 rounded-md">
+
+            
+
+            <img src="images/landingBg4.jpg" alt="profile" class="w-24 h-24 rounded-md" >
+            <button on:click={handleClick}>edit</button>
             <h1 class="text-xl">
               {current_user.displayName}
             </h1>
