@@ -1,4 +1,3 @@
-<!-- Your script section -->
 <script>
 	// Import necessary modules
 	import * as Card from "$lib/components/ui/card";
@@ -19,7 +18,7 @@
 	import { onMount } from "svelte";
 
 	// Initialize variables
-	let reviewss = "";
+	let currReview = "";
 	let rating = "";
 	let reviewData = [];
 	let changeNotifier;
@@ -58,12 +57,12 @@
 			const docRef = await addDoc(collection(db, "Reviews"), {
 				name: userData.name,
 				rating: rating,
-				review: reviewss,
-				prifilePic: userData.photo_url,
+				review: currReview,
+				profilePhoto: userData.photo_url,
 			});
 			console.log("Review added with ID: ", docRef.id);
 			// Clear the input fields after successful submission
-			reviewss = "";
+			currReview = "";
 			rating = "";
 		} catch (error) {
 			console.error("Error adding review: ", error);
@@ -145,9 +144,9 @@
 							>
 								<div class="w-full h-full flex justify-between">
 									<div class="flex justify-evenly gap-4">
-										{#if review.prifilePic}
+										{#if review.profilePhoto}
 											<img
-												src={review.prifilePic}
+												src={review.profilePhoto}
 												alt="profile"
 												class="h-8 w-8 rounded-full object-cover"
 											/>
@@ -206,7 +205,7 @@
 				</Dialog.Header>
 				<p class="text-primary md:ml-2 text-2xl md:text-base">Rating</p>
 				<input
-					type="text"
+					type="number"
 					class="p-2 border-2 rounded-xl border-secondary w-[80vw] md:w-full h-10 md:h-8 mb-4"
 					bind:value={rating}
 				/>
@@ -214,7 +213,7 @@
 				<input
 					type="text"
 					class="p-2 border-2 rounded-xl border-secondary w-[80vw] md:w-full h-10 md:h-8 mb-4"
-					bind:value={reviewss}
+					bind:value={currReview}
 				/>
 
 				<Dialog.Footer>
