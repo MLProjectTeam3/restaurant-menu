@@ -54,7 +54,7 @@
 				// Store user data in Firestore
 				const usersRef = collection(db, "Users");
 				const userDoc = doc(usersRef, user.uid);
-				await setDoc(userDoc, userData, { merge: true })
+				setDoc(userDoc, userData, { merge: true })
 					.then(() => {
 						toasts.success("Signed in with Google successfully!");
 						goto("/menu");
