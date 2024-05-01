@@ -168,9 +168,11 @@
                 .toLowerCase()
                 .includes(searchTerm.toLowerCase())}
               {#if !vegOnly || (vegOnly && item.type === "Veg")}
-                <Card.Root class="mb-4">
+                <Card.Root
+                  class="mb-4 border-2 border-primary border-opacity-20 shadow-md"
+                >
                   <Card.Content
-                    class="w-full h-[120px] flex justify-between border pt-6 items-center"
+                    class="w-full h-[120px] flex justify-between pt-6 items-center"
                   >
                     <img
                       src={imageUrls[index]}
@@ -182,7 +184,7 @@
                       <h2>&#8377;{item.price}</h2>
                     </div>
                     <Button
-                      class=" bg-[#D9D9D9] px-6 h-16 rounded-md flex justify-center items-center text-2xl text-primary"
+                      class=" bg-[#D9D9D9] px-6 h-16 rounded-md flex justify-center items-center text-2xl text-primary hover:text-white"
                       on:click={() => {
                         addOrder(item);
                       }}>Add</Button
