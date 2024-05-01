@@ -3,7 +3,10 @@
 	import { Button } from "$lib/components/ui/button";
 	import * as Card from "$lib/components/ui/card";
 	import { auth } from "$lib/firebase/firebase.config";
-	import { signInWithEmailAndPassword } from "firebase/auth";
+	import {
+		signInWithEmailAndPassword,
+		sendPasswordResetEmail,
+	} from "firebase/auth";
 	import { FlatToast, ToastContainer, toasts } from "svelte-toasts";
 	import { goto } from "$app/navigation";
 
@@ -20,6 +23,17 @@
 				toasts.error(error.message);
 				email = "";
 				password = "";
+			});
+	};
+	const forgotPassword = () => {
+		sendPasswordResetEmail(auth, email)
+			.then(function () {
+				// Password reset email sent successfully
+				console.log("Password reset email sent!");
+			})
+			.catch(function (error) {
+				// An error occurred
+				console.error("Error sending password reset email:", error);
 			});
 	};
 </script>
@@ -68,7 +82,7 @@
 						<Checkbox />
 						<p>Remember me</p>
 					</div>
-					<p>Forgot password?</p>
+					<button on:click={forgotPassword}>Forgot password ?</button>
 				</div>
 				<div class="min-h-16" />
 				<Button on:click={handleLogin}>Login</Button>
