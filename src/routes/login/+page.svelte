@@ -33,11 +33,11 @@
     sendPasswordResetEmail(auth, email)
       .then(function () {
         // Password reset email sent successfully
-        console.log("Password reset email sent!");
+        toasts.success("Password reset email sent!");
       })
       .catch(function (error) {
         // An error occurred
-        console.error("Error sending password reset email:", error);
+        toasts.error("Enter valid Email!");
       });
   };
 
@@ -115,19 +115,7 @@
             <Checkbox checked />
             <p>Remember me</p>
           </div>
-
-          <Dialog.Root>
-            <Dialog.Trigger>
-              <button on:click={forgotPassword}>Forgot password ?</button>
-            </Dialog.Trigger>
-            <Dialog.Content
-              class="py-16 w-2/3 border-2 border-accent rounded-md border-opacity-75 text-center  "
-            >
-              <h1 class="text-primary text-xl">
-                Link to reset password has been sent to your email
-              </h1>
-            </Dialog.Content>
-          </Dialog.Root>
+          <button on:click={forgotPassword}>Forgot password ?</button>
         </div>
 
         <Button on:click={handleLogin} class="mt-8 text-xl ">Login</Button>
