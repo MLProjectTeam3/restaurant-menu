@@ -12,6 +12,7 @@
   import { collection, doc, setDoc } from "firebase/firestore";
   import { FlatToast, ToastContainer, toasts } from "svelte-toasts";
   import { goto } from "$app/navigation";
+  import * as Dialog from "$lib/components/ui/dialog";
 
   let email = "";
   let password = "";
@@ -111,12 +112,25 @@
         <div class="min-h-2" />
         <div class="flex justify-between text-2xl md:text-base md:gap-16">
           <div class="flex gap-2 items-center">
-            <Checkbox />
+            <Checkbox checked />
             <p>Remember me</p>
           </div>
-          <button on:click={forgotPassword}>Forgot password ?</button>
+
+          <Dialog.Root>
+            <Dialog.Trigger>
+              <button on:click={forgotPassword}>Forgot password ?</button>
+            </Dialog.Trigger>
+            <Dialog.Content
+              class="py-16 w-2/3 border-2 border-accent rounded-md border-opacity-75 text-center  "
+            >
+              <h1 class="text-primary text-xl">
+                Link to reset password has been sent to your email
+              </h1>
+            </Dialog.Content>
+          </Dialog.Root>
         </div>
-        <Button on:click={handleLogin} class="mt-8 text-xl">Login</Button>
+
+        <Button on:click={handleLogin} class="mt-8 text-xl ">Login</Button>
         <Button
           on:click={handleGoogleLogin}
           class="mt-4 bg-white text-black border-2 border-accent border-opacity-35 text-lg"
