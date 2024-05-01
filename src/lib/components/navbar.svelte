@@ -10,6 +10,7 @@
   import { onMount } from "svelte";
   import { doc, getDoc, setDoc } from "firebase/firestore";
   import { signOut } from "firebase/auth";
+  import { BiSolidPencil } from "svelte-icons-pack/bi";
 
   // let current_user;
   // onAuthStateChanged((user) => {
@@ -64,7 +65,7 @@
     }
   });
 
-  const handleClick = () => {
+  const handleUploadProfilePhoto = () => {
     console.log("clicked", widget);
     if (widget) {
       widget.open();
@@ -134,38 +135,49 @@
           /></DropdownMenu.Trigger
         >
         <DropdownMenu.Content>
-          <DropdownMenu.Group class="flex flex-col items-center m-4 gap-1">
-            <DropdownMenu.Label>My Account</DropdownMenu.Label>
-            <DropdownMenu.Separator />
-            {#if userData.photo_url}
-              <img
-                src={userData.photo_url}
-                alt="profile"
-                class="w-24 h-24 rounded-md object-cover"
-              />
-            {:else}
-              <Icon src={FaCircleUser} size="32" />{/if}
-            <button on:click={handleClick}>edit</button>
-            <h1 class="text-xl">
-              {userData.name}
-            </h1>
-            <h1 class="text-xl">
-              {userData.phone}
-            </h1>
-            <DropdownMenu.Separator />
-            <Button
-              class="bg-red-600"
-              on:click={() => {
-                signOut(auth)
-                  .then(() => {
-                    toasts.success("Logout Successfull!");
-                    goto("/home");
-                  })
-                  .catch((error) => {
-                    toasts.error("Failed to Logout!" + " " + error.message);
-                  });
-              }}>LOGOUT</Button
+          <DropdownMenu.Group class="flex flex-col items-center gap-1 m-2">
+            <DropdownMenu.Label class="text-xl">Your Profile</DropdownMenu.Label
             >
+
+            <div class="flex flex-col gap-4">
+              <div class="flex gap-2 px-4 w-full min-w-60">
+                {#if userData.photo_url}
+                  <img
+                    src={userData.photo_url}
+                    alt="profile"
+                    class="h-16 w-16 rounded-full hover:opacity-45"
+                  />
+                  <button
+                    class="absolute h-16 w-16 flex items-center bg-black justify-center rounded-full opacity-0 hover:opacity-50"
+                    on:click={handleUploadProfilePhoto}
+                  >
+                    <Icon src={BiSolidPencil} className="fill-white " />
+                  </button>
+                {:else}
+                  <Icon
+                    src={FaCircleUser}
+                    className="h-14 w-14 rounded-full hover:opacity-50 fill-gray-300"
+                  />
+                  <div
+                    class="absolute h-14 w-14 bg-white opacity-0 hover:opacity-50"
+                    on:click={handleUploadProfilePhoto}
+                  >
+                    <Icon
+                      src={BiSolidPencil}
+                      className="absolute left-9 fill-black"
+                    />
+                  </div>
+                {/if}
+                <div>
+                  <h2 class="text-lg">{userData.name}</h2>
+                  <h2 class="text-lg">{userData.phone}</h2>
+                </div>
+              </div>
+              <Button
+                class="bg-red-600 w-full hover:none"
+                on:click={handleLogout}>LOGOUT</Button
+              >
+            </div>
           </DropdownMenu.Group>
         </DropdownMenu.Content>
       </DropdownMenu.Root>
