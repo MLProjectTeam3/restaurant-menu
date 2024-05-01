@@ -200,7 +200,7 @@
 	</a>
 
 	<div class="flex gap-4">
-		{#if auth.currentUser || userData || uid}
+		{#if userData}
 			<a href="/orders"
 				><Icon
 					src={LuShoppingCart}
@@ -240,7 +240,7 @@
 					<DropdownMenu.Item
 						class="p-0 items-start data-[highlighted]:bg-transparent flex flex-col gap-2"
 					>
-						{#if auth.currentUser || userData || uid}
+						{#if userData}
 							<div class="flex gap-2">
 								<img
 									src="images/landingBg4.jpg"
