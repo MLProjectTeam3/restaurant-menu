@@ -83,7 +83,7 @@
     class="z-20 pt-[15vh] md:pt-0 md:mt-24 md:h-[80vh] md:w-1/5 md:border-4 md:shadow-lg border-none shadow-none w-screen flex flex-col items-center justify-between h-screen"
   >
     <Card.Header
-      class="text-6xl md:text-5xl md:pt-16 w-2/3 text-center text-primary"
+      class="text-6xl md:text-5xl md:pt-12 w-2/3 text-center text-primary"
     >
       <Card.Title><h1 class="font-normal">CAFE SANMATHI</h1></Card.Title>
     </Card.Header>
@@ -116,9 +116,14 @@
           </div>
           <button on:click={forgotPassword}>Forgot password ?</button>
         </div>
-        <div class="min-h-16" />
-        <Button on:click={handleLogin}>Login</Button>
-        <Button on:click={handleGoogleLogin}>Login with Google</Button>
+        <Button on:click={handleLogin} class="mt-8 text-xl">Login</Button>
+        <Button
+          on:click={handleGoogleLogin}
+          class="mt-4 bg-white text-black border-2 border-accent border-opacity-35 text-lg"
+        >
+          <img src="icons/google.png" alt="googleIcon" class="pr-2 h-5" />
+          Login with Google
+        </Button>
       </form>
     </Card.Content>
     <Card.Footer>

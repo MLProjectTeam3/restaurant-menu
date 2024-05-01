@@ -62,10 +62,10 @@
   />
   <div class="absolute bg-black h-full w-screen z-0" />
   <Card.Root
-    class="z-20 pt-[12vh] md:pt-0 md:mt-24  md:w-1/5 md:border-4 md:shadow-lg border-none rounded-none md:rounded-lg shadow-none w-screen flex flex-col items-center justify-between"
+    class="z-20 pt-[12vh] md:pt-0 md:mt-16  md:w-1/5 md:border-4 md:shadow-lg border-none rounded-none md:rounded-lg shadow-none w-screen flex flex-col items-center justify-between"
   >
     <Card.Header
-      class="text-6xl md:text-4xl md:pt-12 w-2/3 text-center text-primary"
+      class="text-6xl md:text-4xl md:pt-8 w-2/3 text-center text-primary"
     >
       <Card.Title><h1 class="font-normal">CAFE SANMATHI</h1></Card.Title>
     </Card.Header>
@@ -102,11 +102,20 @@
           type="password"
           class="p-2 border-2 rounded-xl border-secondary w-[80vw] md:w-full h-10 mb-4 md:h-8"
           bind:value={confirmPassword}
-        /><Button
+        />
+        <Button
           on:click={handleSignUp}
-          class="text-2xl p-8 rounded-xl self-center mt-16 md:mt-1 md:p-2 md:text-base md:w-full"
+          class="text-xl self-center mt-8 md:mt-1 md:p-2 md:text-base w-full"
           >Create Account</Button
         >
+
+        <Button
+          on:click
+          class="mt-4 w-full bg-white text-black border-2 border-accent border-opacity-35 text-lg"
+        >
+          <img src="icons/google.png" alt="googleIcon" class="pr-2 h-5" />
+          Login with Google
+        </Button>
       </form>
     </Card.Content>
     <Card.Footer>
