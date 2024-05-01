@@ -145,9 +145,9 @@
 							>
 								<div class="w-full h-full flex justify-between">
 									<div class="flex justify-evenly gap-4">
-										{#if userData.photo_url}
+										{#if review.prifilePic}
 											<img
-												src={userData.photo_url}
+												src={review.prifilePic}
 												alt="profile"
 												class="w-24 h-24 rounded-md object-cover"
 											/>
