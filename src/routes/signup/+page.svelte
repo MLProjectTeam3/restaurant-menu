@@ -41,6 +41,7 @@
 						phone: phone,
 						email: email,
 						uid: user.uid,
+						photo_url: null,
 					},
 					{ merge: true }
 				);
