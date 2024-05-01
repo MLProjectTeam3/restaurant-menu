@@ -215,14 +215,15 @@
 					class="p-2 border-2 rounded-xl border-secondary w-[80vw] md:w-full h-10 md:h-8 mb-4"
 					bind:value={currReview}
 				/>
-
-				<Dialog.Footer>
-					<Button
-						on:click={handleAddReview}
-						class="text-2xl p-8 rounded-xl self-center mt-16 md:mt-1 md:p-2 md:text-base md:w-full"
-						>Submit Review</Button
-					>
-				</Dialog.Footer>
+				{#if rating && currReview}
+					<Dialog.Footer>
+						<Button
+							on:click={handleAddReview}
+							class="text-2xl p-8 rounded-xl self-center mt-16 md:mt-1 md:p-2 md:text-base md:w-full"
+							>Submit Review</Button
+						>
+					</Dialog.Footer>
+				{/if}
 			</Dialog.Content>
 		</Dialog.Root>
 	</div>
