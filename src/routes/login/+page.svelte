@@ -2,11 +2,14 @@
 	import { Checkbox } from "$lib/components/ui/checkbox";
 	import { Button } from "$lib/components/ui/button";
 	import * as Card from "$lib/components/ui/card";
-	import { auth } from "$lib/firebase/firebase.config";
+	import { auth, db } from "$lib/firebase/firebase.config";
 	import {
 		signInWithEmailAndPassword,
 		sendPasswordResetEmail,
+		GoogleAuthProvider,
+		signInWithPopup,
 	} from "firebase/auth";
+	import { collection, doc, setDoc } from "firebase/firestore";
 	import { FlatToast, ToastContainer, toasts } from "svelte-toasts";
 	import { goto } from "$app/navigation";
 
@@ -34,6 +37,35 @@
 			.catch(function (error) {
 				// An error occurred
 				console.error("Error sending password reset email:", error);
+			});
+	};
+
+	const handleGoogleLogin = () => {
+		const provider = new GoogleAuthProvider();
+		signInWithPopup(auth, provider)
+			.then((result) => {
+				const user = result.user;
+				const userData = {
+					name: user.displayName,
+					email: user.email,
+					photo_url: user.photoURL,
+					uid: user.uid,
+				};
+				// Store user data in Firestore
+				const usersRef = collection(db, "Users");
+				const userDoc = doc(usersRef, user.uid);
+				await setDoc(userDoc, userData, { merge: true })
+					.then(() => {
+						toasts.success("Signed in with Google successfully!");
+						goto("/menu");
+					})
+					.catch((error) => {
+						console.error("Error adding document: ", error);
+						toasts.error(error.message);
+					});
+			})
+			.catch((error) => {
+				toasts.error(error.message);
 			});
 	};
 </script>
@@ -86,6 +118,7 @@
 				</div>
 				<div class="min-h-16" />
 				<Button on:click={handleLogin}>Login</Button>
+				<Button on:click={handleGoogleLogin}>Login with Google</Button>
 			</form>
 		</Card.Content>
 		<Card.Footer>
