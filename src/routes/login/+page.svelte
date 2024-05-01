@@ -2,8 +2,14 @@
   import { Checkbox } from "$lib/components/ui/checkbox";
   import { Button } from "$lib/components/ui/button";
   import * as Card from "$lib/components/ui/card";
-  import { auth } from "$lib/firebase/firebase.config";
-  import { signInWithEmailAndPassword } from "firebase/auth";
+  import { auth, db } from "$lib/firebase/firebase.config";
+  import {
+    signInWithEmailAndPassword,
+    sendPasswordResetEmail,
+    GoogleAuthProvider,
+    signInWithPopup,
+  } from "firebase/auth";
+  import { collection, doc, setDoc } from "firebase/firestore";
   import { FlatToast, ToastContainer, toasts } from "svelte-toasts";
   import { goto } from "$app/navigation";
 
@@ -20,6 +26,48 @@
         toasts.error(error.message);
         email = "";
         password = "";
+      });
+  };
+  const forgotPassword = () => {
+    sendPasswordResetEmail(auth, email)
+      .then(function () {
+        // Password reset email sent successfully
+        console.log("Password reset email sent!");
+      })
+      .catch(function (error) {
+        // An error occurred
+        console.error("Error sending password reset email:", error);
+      });
+  };
+
+  const handleGoogleLogin = () => {
+    const provider = new GoogleAuthProvider();
+    signInWithPopup(auth, provider)
+      .then(async (result) => {
+        const user = result.user;
+
+        // Store user data in Firestore
+        await setDoc(
+          doc(db, "Users", user.uid),
+          {
+            name: user.displayName,
+            email: user.email,
+            photo_url: user.photoURL,
+            uid: user.uid,
+          },
+          { merge: true }
+        )
+          .then(() => {
+            toasts.success("Signed in with Google successfully!");
+            goto("/menu");
+          })
+          .catch((error) => {
+            console.error("Error adding document: ", error);
+            toasts.error(error.message);
+          });
+      })
+      .catch((error) => {
+        toasts.error(error.message);
       });
   };
 </script>
@@ -63,18 +111,19 @@
         <div class="min-h-2" />
         <div class="flex justify-between text-2xl md:text-base md:gap-16">
           <div class="flex gap-2 items-center">
-            <Checkbox checked />
+            <Checkbox />
             <p>Remember me</p>
           </div>
-          <p>Forgot password?</p>
+          <button on:click={forgotPassword}>Forgot password ?</button>
         </div>
         <div class="min-h-16" />
         <Button on:click={handleLogin}>Login</Button>
+        <Button on:click={handleGoogleLogin}>Login with Google</Button>
       </form>
     </Card.Content>
     <Card.Footer>
-      <p class="text-2xl md:text-lg">Don't have an account?</p>
-      <a href="/signup"><u class="text-2xl md:text-lg">Sign Up</u></a>
+      <p class="text-2xl">Don't have an account?</p>
+      <a href="/signup"><u class="text-2xl">Sign Up</u></a>
     </Card.Footer>
   </Card.Root>
   <ToastContainer placement="bottom-right" let:data>
