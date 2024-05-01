@@ -6,7 +6,7 @@
 	import Carousel from "svelte-carousel";
 	import * as Dialog from "$lib/components/ui/dialog";
 	import { Icon } from "svelte-icons-pack";
-	import { FaPenToSquare } from "svelte-icons-pack/fa";
+	import { FaPenToSquare, FaCircleUser } from "svelte-icons-pack/fa";
 	import { BiSolidStar } from "svelte-icons-pack/bi";
 	import {
 		addDoc,
@@ -145,11 +145,18 @@
 							>
 								<div class="w-full h-full flex justify-between">
 									<div class="flex justify-evenly gap-4">
-										<img
-											src={review.prifilePic}
-											alt="profile"
-											class="h-8 w-8 rounded-full"
-										/>
+										{#if userData.photo_url}
+											<img
+												src={userData.photo_url}
+												alt="profile"
+												class="w-24 h-24 rounded-md object-cover"
+											/>
+										{:else}
+											<Icon
+												src={FaCircleUser}
+												size="32"
+											/>
+										{/if}
 										<h1 class="text-3xl md:text-2xl">
 											{review.name}
 										</h1>
