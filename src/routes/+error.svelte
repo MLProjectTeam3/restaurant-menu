@@ -8,5 +8,5 @@
   <p class="text-xl pb-4">
     Oops, looks like you've gone astray. The page you're looking for isn't here.
   </p>
-  <Button>Back Home</Button>
+  <a href="/home"><Button>Back Home</Button></a>
 </div>

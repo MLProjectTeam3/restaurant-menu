@@ -9,7 +9,7 @@
   import { goto } from "$app/navigation";
   import { onMount } from "svelte";
   import { doc, getDoc, setDoc } from "firebase/firestore";
-  import { signOut } from "firebase/auth";
+  import { signOut } from "@firebase/auth";
 
   // let current_user;
   // onAuthStateChanged((user) => {
