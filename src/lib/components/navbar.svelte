@@ -207,20 +207,20 @@
       </DropdownMenu.Trigger>
       <DropdownMenu.Content class="w-1/2 bg-background">
         <DropdownMenu.Group>
-          <DropdownMenu.Item class="text-xl"
-            ><a href="/home">Home</a></DropdownMenu.Item
+          <a href="/home"
+            ><DropdownMenu.Item class="text-xl">Home</DropdownMenu.Item></a
           ><DropdownMenu.Separator />
-          <DropdownMenu.Item class="text-xl"
-            ><a href="/menu">Menu</a></DropdownMenu.Item
+          <a href="/menu"
+            ><DropdownMenu.Item class="text-xl">Menu</DropdownMenu.Item></a
           ><DropdownMenu.Separator />
-          <DropdownMenu.Item class="text-xl"
-            ><a href="/home#about">AboutUs</a></DropdownMenu.Item
+          <a href="/home#about"
+            ><DropdownMenu.Item class="text-xl">AboutUs</DropdownMenu.Item></a
           ><DropdownMenu.Separator />
-          <DropdownMenu.Item class="text-xl"
-            ><a href="/home#contact">Contact</a></DropdownMenu.Item
+          <a href="/home#contact"
+            ><DropdownMenu.Item class="text-xl">Contact</DropdownMenu.Item></a
           ><DropdownMenu.Separator />
-          <DropdownMenu.Item class="text-xl"
-            ><a href="/home#reviews">Reviews</a></DropdownMenu.Item
+          <a href="/home#reviews"
+            ><DropdownMenu.Item class="text-xl">Reviews</DropdownMenu.Item></a
           ><DropdownMenu.Separator />
         </DropdownMenu.Group>
         <DropdownMenu.Group
