@@ -1,6 +1,4 @@
 <script>
-  // @ts-nocheck
-
   import { Button } from "./ui/button";
   import * as DropdownMenu from "$lib/components/ui/dropdown-menu";
   import { auth, db } from "$lib/firebase/firebase.config";
@@ -11,6 +9,7 @@
   import { goto } from "$app/navigation";
   import { onMount } from "svelte";
   import { doc, getDoc, setDoc } from "firebase/firestore";
+  import { signOut } from "firebase/auth";
 
   // let current_user;
   // onAuthStateChanged((user) => {
