@@ -7,6 +7,9 @@
   import { goto } from "$app/navigation";
   import * as Dialog from "$lib/components/ui/dialog";
   import { FlatToast, ToastContainer, toasts } from "svelte-toasts";
+  import { Icon } from 'svelte-icons-pack';
+  import { FiMinus } from "svelte-icons-pack/fi";
+  import { FaSolidPlus } from "svelte-icons-pack/fa";
 
   let my_orders = [];
   let totalPrice = 0;
@@ -31,7 +34,6 @@
   const handleIncrement = (index) => {
     my_orders[index].count += 1;
     my_orders[index].displayPrice += my_orders[index].price;
-    s;
     orderStore.set(my_orders);
   };
 
@@ -85,21 +87,22 @@
           <div class="flex flex-col text-3xl justify-evenly items-center">
             <h2>&#8377;{item.displayPrice}</h2>
             <div
-              class="flex items-center justify-center border border-primary rounded-md bg-[#FFECD1]"
-            >
+              class="flex items-center justify-center h-full border border-primary rounded-md bg-[#FFECD1]"
+            ><div class="border border-r-primary border-transparent">
               <button
-                class="border border-r-primary px-2"
+                class="px-2"
                 on:click={() => {
                   handleDecrement(index);
-                }}>-</button
-              >
+                }}><Icon src={FiMinus} size=16></Icon></button
+              ></div>
               <h2 class="px-2">{item.count}</h2>
+              <div class="border border-l-primary border-transparent">
               <button
-                class="border border-l-primary h-full px-2"
+                class=" px-2"
                 on:click={() => {
                   handleIncrement(index);
-                }}>+</button
-              >
+                }}><Icon src={FaSolidPlus} size=16></Icon></button
+              ></div>
             </div>
           </div></Card.Root
         >

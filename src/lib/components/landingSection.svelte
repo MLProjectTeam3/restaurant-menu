@@ -3,17 +3,17 @@
   import { Button } from "$lib/components/ui/button";
   import Carousel from "svelte-carousel";
 
-  const numbs = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  const numbs = [1, 2, 3, 4, 5, 6, 7, 8,9,10,11,12];
 </script>
 
 <div class="w-full h-[100dvh] flex justify-center items-center">
   <div class="w-full max-h-full bg-black absolute bottom-0 carousel-item">
-    <Carousel autoplay autoplayDuration={2000} arrows={false} dots={false}>
+    <Carousel autoplay autoplayDuration={2000} arrows={false} swiping={true} dots={false}>
       {#each numbs as num}
         <img
           class="w-full h-[100dvh] object-cover opacity-50"
           src="images/landingBg{num}.jpg"
-          alt="Bg"
+          alt="Bg{num}"
         />
       {/each}
       <button
