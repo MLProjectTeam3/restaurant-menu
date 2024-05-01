@@ -43,18 +43,20 @@
 	const handleGoogleLogin = () => {
 		const provider = new GoogleAuthProvider();
 		signInWithPopup(auth, provider)
-			.then((result) => {
+			.then(async (result) => {
 				const user = result.user;
-				const userData = {
-					name: user.displayName,
-					email: user.email,
-					photo_url: user.photoURL,
-					uid: user.uid,
-				};
+
 				// Store user data in Firestore
-				const usersRef = collection(db, "Users");
-				const userDoc = doc(usersRef, user.uid);
-				setDoc(userDoc, userData, { merge: true })
+				await setDoc(
+					doc(db, "Users", user.uid),
+					{
+						name: user.displayName,
+						email: user.email,
+						photo_url: user.photoURL,
+						uid: user.uid,
+					},
+					{ merge: true }
+				)
 					.then(() => {
 						toasts.success("Signed in with Google successfully!");
 						goto("/menu");
