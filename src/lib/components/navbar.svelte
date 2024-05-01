@@ -9,7 +9,7 @@
   import { goto } from "$app/navigation";
   import { onMount } from "svelte";
   import { doc, getDoc, setDoc } from "firebase/firestore";
-  import { signOut } from "@firebase/auth";
+  import { signOut } from "firebase/auth";
 
   // let current_user;
   // onAuthStateChanged((user) => {
@@ -137,12 +137,14 @@
           <DropdownMenu.Group class="flex flex-col items-center m-4 gap-1">
             <DropdownMenu.Label>My Account</DropdownMenu.Label>
             <DropdownMenu.Separator />
-
-            <img
-              src={userData.photo_url}
-              alt="profile"
-              class="w-24 h-24 rounded-md object-cover"
-            />
+            {#if userData.photo_url}
+              <img
+                src={userData.photo_url}
+                alt="profile"
+                class="w-24 h-24 rounded-md object-cover"
+              />
+            {:else}
+              <Icon src={FaCircleUser} size="32" />{/if}
             <button on:click={handleClick}>edit</button>
             <h1 class="text-xl">
               {userData.name}
