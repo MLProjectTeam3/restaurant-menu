@@ -149,7 +149,7 @@
 											<img
 												src={review.prifilePic}
 												alt="profile"
-												class="w-24 h-24 rounded-md object-cover"
+												class="h-8 w-8 rounded-full object-cover"
 											/>
 										{:else}
 											<Icon
