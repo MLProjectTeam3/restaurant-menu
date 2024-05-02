@@ -2,7 +2,7 @@
   class="bg-[#FFECD1] h-[100dvh] flex flex-col md:flex-row justify-center items-center gap-16"
   id="about"
 >
-  <div class="flex flex-col items-center w-1/2 md:w-1/4 gap-6">
+  <div class="flex flex-col items-center w-[90%] md:w-1/4 gap-6">
     <h1 class="text-5xl text-primary">About Us</h1>
     <div class="flex gap-4 md:justify-left">
       <img src="icons/clock.svg" alt="time" />

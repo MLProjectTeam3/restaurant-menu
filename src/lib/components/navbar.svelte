@@ -119,12 +119,11 @@
   </div>
 
   <div class="flex justify-center items-center space-x-8">
-    <a href="/orders">
-      <Icon src={LuShoppingCart} size="32" className="stroke-primary" />
-    </a>
-
     <!-- Render the profile options button if user exists(ie. user has signed in) -->
     {#if userData}
+      <a href="/orders">
+        <Icon src={LuShoppingCart} size="32" className="stroke-primary" />
+      </a>
       <p class="text-primary font-serif text-3xl text-opacity-50">|</p>
       <DropdownMenu.Root>
         <DropdownMenu.Trigger
