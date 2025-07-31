@@ -7,7 +7,6 @@
 ## Table of Contents
 
 - [Features](#features)
-- [Demo](#demo)
 - [Tech Stack](#tech-stack)
 - [Getting Started](#getting-started)
 - [File Structure](#file-structure)
@@ -31,11 +30,7 @@
 
 ---
 
-## Demo
 
-*If a live demo or screenshot is available, add it here!*
-
----
 
 ## Tech Stack
 
@@ -139,11 +134,6 @@ To customize the menu, categories, or styling:
 
 ---
 
-## Contributing
-
-Contributions are welcome! Please fork the repo and submit pull requests for improvements or bug fixes. Open issues for feature requests or questions.
-
----
 
 ## License
 
