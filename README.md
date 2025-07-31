@@ -12,7 +12,6 @@
 - [File Structure](#file-structure)
 - [Usage](#usage)
 - [Customization](#customization)
-- [Contributing](#contributing)
 - [License](#license)
 - [Authors](#authors)
 
